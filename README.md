@@ -1,24 +1,73 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# model&table design
 
-Things you may want to cover:
+## users table
+| Column             | Type    | Options                 |
+| ------------------ | ------- | ----------------------- |
+| nickname           | string  | null: false             |
+| email              | string  | null: false unique:true |
+| encrypted_password | string  | null: false             |
 
-* Ruby version
+## User model association
+has_many :recipes
+has_many :comments
+has_many :likes
 
-* System dependencies
+## recipes table(レシピ)
+| Column  | Type       | Options                       |
+| ------- | ---------- | ----------------------------- |
+| title   | string     | null: false                   |
+| content | text       | null: false                   |
+| user    | references | null: false foreign_key: true |
 
-* Configuration
+## Recipe model association
+belongs_to :user
+has_one :ingredient
+has_many :foods_recipes
+has_many :foods, belongs_to :foods_recipes
+has_many :comments
+has_many :likes
+has_many :recipes_tags
+has_many :tags, belongs_to :recipes_tags
 
-* Database creation
+## ingredients table（レシピの材料）
+| Column   | Type       | Options                       |
+| -------- | ---------- | ----------------------------- |
+| material | string     | null: false                   |
+| quantity | string     | null: false                   |
+| recipe   | references | null: false foreign_key: true |
 
-* Database initialization
+## Ingredient model association
+belongs_to :recipe
 
-* How to run the test suite
+## foods table（レシピに使う主な材料）
+| Column       | Type   | Options     |
+| ------------ | ------ | ----------- |
+| food_name    | string | null: false |
+| food_content | text   | null: false |
 
-* Services (job queues, cache servers, search engines, etc.)
+## Food model association
+has_many :foods_recipes
+has_many :recipes belongs_to :foods_recipes
+has_many :foods_nutrients
+has_many :nutrients belongs_to :food_nutrients
 
-* Deployment instructions
+## nutrients table
+| Column           | Type   | Options     |
+| ---------------- | ------ | ----------- |
+| nutrient_name    | string | null: false |
+| nutrient_content | text   | null: false |
 
-* ...
+## Nutrient model association
+has_many :foods_nutrients
+has_many :foods belongs_to :food_nutrients
+
+## tags table association
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| tag_name | string | null: false |
+
+## main_foods_nutrients table
+has_many: recipes_tags
+has_many: recipes belongs_to :recipes_tags
