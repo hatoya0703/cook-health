@@ -9,10 +9,12 @@
 | email              | string  | null: false unique:true |
 | encrypted_password | string  | null: false             |
 
-## User model association
-has_many :recipes
-has_many :comments
-has_many :likes
+## user model association
+- has_many :recipes
+- has_many :comments
+- has_many :comment_recipes, through: :comments, source: :recipe
+- has_many :favorites
+- has_many :favorite_recipes, through: :favorites, source: :recipe
 
 ## recipes table(レシピ)
 | Column  | Type       | Options                       |
@@ -21,15 +23,17 @@ has_many :likes
 | content | text       | null: false                   |
 | user    | references | null: false foreign_key: true |
 
-## Recipe model association
-belongs_to :user
-has_one :ingredient
-has_many :foods_recipes
-has_many :foods, belongs_to :foods_recipes
-has_many :comments
-has_many :likes
-has_many :recipes_tags
-has_many :tags, belongs_to :recipes_tags
+## recipe model association
+- belongs_to :user
+- has_one :ingredient
+- has_many :food_recipes
+- has_many :foods, through: :food_recipes
+- has_many :comments
+- has_many :users, through: :comments
+- has_many :favorites
+- has_many :favorite_users, :through: favorites, source: :user
+- has_many :recipe_tags
+- has_many :tags, through: :recipe_tags
 
 ## ingredients table（レシピの材料）
 | Column   | Type       | Options                       |
@@ -38,8 +42,29 @@ has_many :tags, belongs_to :recipes_tags
 | quantity | string     | null: false                   |
 | recipe   | references | null: false foreign_key: true |
 
-## Ingredient model association
-belongs_to :recipe
+## ingredient model association
+- belongs_to :recipe
+
+## comments table
+| Column          | Type       | Options                       |
+| --------------- | ---------- | ----------------------------- |
+| comment_content | text       | null: false                   |
+| user            | references | null: false foreign_key: true |
+| recipe          | references | null: false foreign_key: true |
+
+## comment model association
+- belongs_to :user
+- belongs_to :recipe
+
+## favorites table
+| Column | Type       | Options                       |
+| ------ | ---------- | ----------------------------- |
+| user   | references | null: false foreign_key: true |
+| recipe | references | null: false foreign_key: true |
+
+## favorite model association
+- belongs_to :user
+- belongs_to :recipe
 
 ## foods table（レシピに使う主な材料）
 | Column       | Type   | Options     |
@@ -47,11 +72,11 @@ belongs_to :recipe
 | food_name    | string | null: false |
 | food_content | text   | null: false |
 
-## Food model association
-has_many :foods_recipes
-has_many :recipes belongs_to :foods_recipes
-has_many :foods_nutrients
-has_many :nutrients belongs_to :food_nutrients
+## food model association
+- has_many :food_recipes
+- has_many :recipes through: :food_recipes
+- has_many :food_nutrients
+- has_many :nutrients through: :food_nutrients
 
 ## nutrients table
 | Column           | Type   | Options     |
@@ -59,15 +84,35 @@ has_many :nutrients belongs_to :food_nutrients
 | nutrient_name    | string | null: false |
 | nutrient_content | text   | null: false |
 
-## Nutrient model association
-has_many :foods_nutrients
-has_many :foods belongs_to :food_nutrients
+## nutrient model association
+- has_many :food_nutrient
+- has_many :foods through: :food_nutrient
+
+## food_nutrients table
+| Column   | Type      | Options                       |
+| -------- | --------- | ----------------------------- |
+| food     | reference | null: false foreign_key: true |
+| nutrient | reference | null: false foreign_key: true |
+
+## food nutrient model association
+- belongs_to: food
+- belongs_to: nutrient
 
 ## tags table association
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
 | tag_name | string | null: false |
 
-## main_foods_nutrients table
-has_many: recipes_tags
-has_many: recipes belongs_to :recipes_tags
+## tag table association
+- has_many: recipe_tag
+- has_many: recipes belongs_to :recipe_tag
+
+## recipe_tags table
+| Column  | Type      | Options                       |
+| ------- | --------- | ----------------------------- |
+| recipe  | reference | null: false foreign_key: true |
+| tag     | reference | null: false foreign_key: true |
+
+## recipe tag model association
+- belongs_to: recipe
+- belongs_to: tag
