@@ -78,6 +78,16 @@
 - has_many :food_nutrients
 - has_many :nutrients through: :food_nutrients
 
+## food_recipes table
+| Column   | Type      | Options                       |
+| -------- | --------- | ----------------------------- |
+| food     | reference | null: false foreign_key: true |
+| recipe   | reference | null: false foreign_key: true |
+
+## food recipes model association
+- belongs_to :food
+- belongs_to :recipe
+
 ## nutrients table
 | Column           | Type   | Options     |
 | ---------------- | ------ | ----------- |
