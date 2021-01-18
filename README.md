@@ -17,11 +17,12 @@
 - has_many :favorite_recipes, through: :favorites, source: :recipe
 
 ## recipes table(レシピ)
-| Column  | Type       | Options                       |
-| ------- | ---------- | ----------------------------- |
-| title   | string     | null: false                   |
-| content | text       | null: false                   |
-| user    | references | null: false foreign_key: true |
+| Column      | Type       | Options                       |
+| ----------- | ---------- | ----------------------------- |
+| title       | string     | null: false                   |
+| content     | text       | null: false                   |
+| category_id | integer    | null: false                   |
+| user        | references | null: false foreign_key: true |
 
 ## recipe model association
 - belongs_to :user
