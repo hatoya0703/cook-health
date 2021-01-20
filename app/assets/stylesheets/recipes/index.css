@@ -1,15 +1,23 @@
 .search {
-background-color: red
+  height: 12vh;
 }
 
-.main {
-background-color: blue;
+.main-content {
+  height: 100vh;
+  display: flex;
 }
 
-.side {
-background-color: burlywood;
+.left-content {
+  height: 100%;
+  width: 22vw;
+}
+
+.center-content {
+  height: 100%;
+  width: 78vw;
 }
 
 .contact {
-background-color: cornflowerblue;
+  height: 35vh;
+  width: 100%;
 }
