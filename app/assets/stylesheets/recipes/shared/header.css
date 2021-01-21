@@ -2,6 +2,7 @@
   height: 20vh;
   width: 100vw;
   display: flex;
+  background-color: khaki;
 }
 
 .header-logo{
