@@ -16,11 +16,19 @@
     </div>
     <div class="highlight-recipes-content">
       <ul class="recipe-lists">
-        <%= @recipes.each do |r| %>
+        <% @recipes.each do |r| %>
           <li class="lists">
             <%# list要素をリンク化%>
             <%= link_to "#" do %>
-              <%= image_tag "sample.png", class: "recipe_list_image"%>
+              <%= image_tag "sample.png", class: "recipe-list-image"%>
+              <div class="recipe-list-contents">
+                <h3 class="recipe-title">
+                  <%= r.title %>
+                </h3>
+                <p>
+                  <%= r.content %>
+                </p>
+              </div>
             <% end %>
             <%# /list要素をリンク化%>
           </li>
