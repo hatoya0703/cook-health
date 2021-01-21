@@ -15,7 +15,17 @@
       人気レシピ一覧
     </div>
     <div class="highlight-recipes-content">
-      recipesクラスからデータ取得して表示
+      <ul class="recipe-lists">
+        <%= @recipes.each do |r| %>
+          <li class="lists">
+            <%# list要素をリンク化%>
+            <%= link_to "#" do %>
+              <%= image_tag "sample.png", class: "recipe_list_image"%>
+            <% end %>
+            <%# /list要素をリンク化%>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
