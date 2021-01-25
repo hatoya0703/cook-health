@@ -1,3 +1,7 @@
+li{
+  list-style: none;
+}
+
 .main-content {
   height: 100vh;
   display: flex;
