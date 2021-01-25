@@ -17,22 +17,24 @@
     <div class="highlight-recipes-content">
       <ul class="recipe-lists">
         <% @recipes.each do |r| %>
-          <li class="lists">
-            <%# list要素をリンク化%>
-            <%= link_to "#",class: "recipe-list" do %>
-              <%= image_tag "sample.png", class: "recipe-list-image"%>
-              <div class="recipe-list-contents">
-                <h3 class="recipe-title">
-                  <%= r.title %>
-                </h3>
-                <h3 class="recipe-user">
-                  <%= r.user.nickname %>
-                </h3>
-                <p>
-                  <%= r.content %>
-                </p>
-              </div>
-            <% end %>
+          <li>
+            <div class="lists">
+              <%# list要素をリンク化%>
+              <%= link_to "#",class: "recipe-list" do %>
+                <div class="recipe-list-contents">
+                  <%= image_tag "sample.png", class: "recipe-list-image"%>
+                  <h3 class="recipe-title">
+                    <%= r.title %>
+                  </h3>
+                  <span class="recipe-user">
+                    <%= r.user.nickname %>
+                  </span>
+                  <p>
+                    <%= r.content %>
+                  </p>
+                </div>
+              <% end %>
+            </div>
             <%# /list要素をリンク化%>
           </li>
         <% end %>
