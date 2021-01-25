@@ -22,16 +22,18 @@
               <%# list要素をリンク化%>
               <%= link_to "#",class: "recipe-list" do %>
                 <div class="recipe-list-contents">
+                  <div class="recipe-text-contents">
+                    <h3 class="recipe-title">
+                      <%= r.title %>
+                    </h3>
+                    <span class="recipe-user">
+                      <%= r.user.nickname %>
+                    </span>
+                    <p>
+                      <%= r.content %>
+                    </p>
+                  </div>
                   <%= image_tag "sample.png", class: "recipe-list-image"%>
-                  <h3 class="recipe-title">
-                    <%= r.title %>
-                  </h3>
-                  <span class="recipe-user">
-                    <%= r.user.nickname %>
-                  </span>
-                  <p>
-                    <%= r.content %>
-                  </p>
                 </div>
               <% end %>
             </div>
