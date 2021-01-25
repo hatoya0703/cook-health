@@ -1,6 +1,5 @@
 li{
   list-style: none;
-  width: 1000px;
 }
 
 .recipe-list{
@@ -9,10 +8,22 @@ li{
 
 .recipe-list-contents{
   display: flex;
+  border-bottom: 10px solid green;
+}
+
+.recipe-text-contents{
+  box-sizing: border-box;
+  width: 40vw;
+}
+
+.recipe-image-content{
+  box-sizing: border-box;
+  width: 38vw;
+  padding: 50px;
 }
 
 .main-content {
-  height: 100vh;
+  height: 300vh;
   display: flex;
 }
 
@@ -24,7 +35,7 @@ li{
 
 .center-content {
   height: 100%;
-  width: 78vw;
+  
   background-color: deepskyblue;
 }
 
