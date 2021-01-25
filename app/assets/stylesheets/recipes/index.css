@@ -1,0 +1,46 @@
+li{
+  list-style: none;
+}
+
+.recipe-list{
+  text-decoration: none;
+}
+
+.recipe-list-contents{
+  display: flex;
+  border-bottom: 10px solid green;
+}
+
+.recipe-text-contents{
+  box-sizing: border-box;
+  width: 40vw;
+}
+
+.recipe-image-content{
+  box-sizing: border-box;
+  width: 38vw;
+  padding: 50px;
+}
+
+.main-content {
+  height: 300vh;
+  display: flex;
+}
+
+.left-content {
+  height: 100%;
+  width: 22vw;
+  background-color: burlywood;
+}
+
+.center-content {
+  height: 100%;
+  
+  background-color: deepskyblue;
+}
+
+.contact {
+  height: 35vh;
+  width: 100%;
+  background-color: honeydew;
+}

@@ -1,0 +1,10 @@
+.footer-content{
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  background-color: lightcoral;
+}
+
+.copyright{
+  width: 30vw;
+}

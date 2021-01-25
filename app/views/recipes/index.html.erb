@@ -1,0 +1,55 @@
+<%= render "shared/header" %>
+<div class ="main-content">
+  <div class="left-content">
+    <div class="highlight-tags">
+      <div class="highright-tags-title">
+        人気のレシピタグ一覧
+      </div>
+      <div class="highright-tags-contents">
+        Tagクラスからデータ取得して表示
+      </div>
+    </div>
+  </div>
+  <div class="center-content">
+    <div class="highright-recipes-title">
+      人気レシピ一覧
+    </div>
+    <div class="highlight-recipes-content">
+      <ul class="recipe-lists">
+        <% @recipes.each do |r| %>
+          <li>
+            <div class="lists">
+              <%# list要素をリンク化%>
+              <%= link_to "#",class: "recipe-list" do %>
+                <div class="recipe-list-contents">
+                  <div class="recipe-text-contents">
+                    <h3 class="recipe-title">
+                      <%= r.title %>
+                    </h3>
+                    <span class="recipe-user">
+                      <%= r.user.nickname %>
+                    </span>
+                    <p>
+                      <%= r.content %>
+                    </p>
+                  </div>
+                  <%= image_tag "sample.png", class: "recipe-image-content"%>
+                </div>
+              <% end %>
+            </div>
+            <%# /list要素をリンク化%>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="contact">
+  <div class="conract-title">
+    お問い合わせ
+  </div>
+  <div class="contact-form">
+    追加実装項目）
+  </div>
+</div>
+<%= render "shared/footer" %>
