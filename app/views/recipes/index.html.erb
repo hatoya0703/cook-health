@@ -19,7 +19,7 @@
         <% @recipes.each do |r| %>
           <li class="lists">
             <%# list要素をリンク化%>
-            <%= link_to "#" do %>
+            <%= link_to "#",class: "recipe-list" do %>
               <%= image_tag "sample.png", class: "recipe-list-image"%>
               <div class="recipe-list-contents">
                 <h3 class="recipe-title">
