@@ -9,7 +9,7 @@
     <%# ログイン/ログアウト機能,ユーザーメニュー実装予定 %>
     <ul class="user-session">
       <% if user_signed_in? %>
-        <li><%= link_to current_user.nickname, "ユーザーメニュー画面" %></li>
+        <li><%= link_to current_user.nickname, user_path(current_user.id) %></li>
         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
       <% else %>
         <li><%= link_to "ログイン", new_user_session_path %></li>
