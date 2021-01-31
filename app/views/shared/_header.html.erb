@@ -6,7 +6,16 @@
     検索フォーム実装予定
   </div>
   <div class="header-main-content">
+    <div class="menu"> <!-- アコーディオンここから -->
+      <a href="#" class="btn">Menu</a>
+      <ul class="nav">
+        <li><a href="">マイページ</a></li>
+        <li><a href="">ヘルプ</a></li>
+      </ul>
+    </div> <!--アコーディオンここまで >
     <%# ログイン/ログアウト機能,ユーザーメニュー実装予定 %>
+    <!-- とりあえずコメントアウト
+
     <ul class="user-session">
       <% if user_signed_in? %>
         <li><%= link_to current_user.nickname, user_path(current_user.id) %></li>
@@ -16,5 +25,7 @@
         <li><%= link_to "新規登録", new_user_registration_path %></li>
       <% end %>
     </ul>
+
+    -->
   </div>
 </div>

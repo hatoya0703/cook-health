@@ -17,3 +17,7 @@
 .header-main-content{
   width: 60vw;
 }
+
+ul{
+  display: none;
+}
