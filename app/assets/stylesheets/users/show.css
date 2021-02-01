@@ -1,0 +1,9 @@
+.user-contents{
+  height: 75vh;
+  width: 100vw;
+  background-color: cadetblue;
+}
+
+.tab-content > li{
+  display: none;
+}

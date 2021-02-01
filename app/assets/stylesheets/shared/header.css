@@ -1,5 +1,6 @@
 .header-content{
   height: 20vh;
+  width: 100vw;
   display: flex;
   background-color: khaki;
 }
@@ -15,4 +16,9 @@
 
 .header-main-content{
   width: 60vw;
+  display: flex;
+}
+
+ul.nav{
+  display: none;
 }
