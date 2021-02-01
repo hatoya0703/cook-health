@@ -12,5 +12,6 @@ class Recipe < ApplicationRecord
   has_many :tags, through: :recipe_tags
 
   # ActiveHashのアソシエーション
+  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :category
 end
