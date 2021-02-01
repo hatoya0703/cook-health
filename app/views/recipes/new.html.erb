@@ -1,8 +1,19 @@
 <%= render "shared/header"%>
 
 <div class="recipe-post-form">
-  <%= form_with model: @recipe, local: true do %>
-    レシピを投稿する
+  <%= form_with model: @recipe, local: true do |f| %>
+    <div class="recipe-post-text">
+      レシピを投稿する
+    </div>
+    <%= f.file_field :image %>
+    <div class= "post-content-text">
+      レシピ名
+    </div>
+    <%= f.text_area :title, placeholder:"レシピ名" %>
+    <%= f.text_field :content, placeholder: "レシピの説明" %>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {}) %>
+
+
   <% end %>
 </div>
 
