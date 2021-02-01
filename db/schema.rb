@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_28_083617) do
+ActiveRecord::Schema.define(version: 2021_02_01_055353) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "comment_content", null: false, comment: "コメント内容"
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 2021_01_28_083617) do
     t.bigint "user_id", null: false, comment: "投稿ユーザー"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "category_id"
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
