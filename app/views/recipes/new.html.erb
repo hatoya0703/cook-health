@@ -11,7 +11,7 @@
     <%= f.text_area :title, placeholder:"レシピ名" %>
     <%= f.text_field :content, placeholder: "レシピの説明" %>
     <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {}) %>
-    <%= f.file_field :images %>
+    <%= f.file_field :images, multiple: true %>
     <%= f.submit "投稿する" %>
 
 
