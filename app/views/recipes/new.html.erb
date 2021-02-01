@@ -1,7 +1,9 @@
 <%= render "shared/header"%>
 
-<div class="recipe-post-flame">
-  
+<div class="recipe-post-form">
+  <%= form_with model: @recipe, local: true do %>
+    レシピを投稿する
+  <% end %>
 </div>
 
 <%= render "shared/footer" %>
