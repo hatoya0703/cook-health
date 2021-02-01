@@ -16,8 +16,9 @@
 
 .header-main-content{
   width: 60vw;
+  display: flex;
 }
 
-ul{
+ul.nav{
   display: none;
 }
