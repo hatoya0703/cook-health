@@ -8,14 +8,14 @@
     <div class= "post-content-text">
       レシピ名
     </div>
-    <%= f.text_area :title, placeholder:"レシピ名" %>
-    <%= f.text_field :content, placeholder: "レシピの説明" %>
+    <%= f.text_field :title, placeholder:"レシピ名" %>
+    <%= f.text_area :content, placeholder: "レシピの説明" %>
     <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {}) %>
     <%= f.file_field :images, multiple: true %>
     <div id="image-preview"></div>
+    <%= f.text_field :material, placeholder:"材料名"%>
+    <%= f.text_field :quantity, placeholder:"分量"%>
     <%= f.submit "投稿する" %>
-
-
   <% end %>
 </div>
 
