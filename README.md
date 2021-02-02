@@ -20,21 +20,22 @@
 | Column      | Type       | Options                       |
 | ----------- | ---------- | ----------------------------- |
 | title       | string     | null: false                   |
-| content     | text       | null: false                   |
 | category_id | integer    | null: false                   |
+| description | text       | null: false                   |
+| content     | text       | null: false                   |
 | user        | references | null: false foreign_key: true |
 
 ## recipe model association
 - belongs_to :user
-- has_one :ingredient
-- has_many :food_recipes
-- has_many :foods, through: :food_recipes
+- has_many :ingredients
 - has_many :comments
 - has_many :users, through: :comments
 - has_many :favorites
 - has_many :favorite_users, :through: favorites, source: :user
 - has_many :recipe_tags
 - has_many :tags, through: :recipe_tags
+- has_many :recipe_nutrients
+- has_many :nutrients, through: :recipe_nutrients
 
 ## ingredients table（レシピの材料）
 | Column   | Type       | Options                       |
@@ -67,28 +68,6 @@
 - belongs_to :user
 - belongs_to :recipe
 
-## foods table（レシピに使う主な材料）
-| Column       | Type   | Options     |
-| ------------ | ------ | ----------- |
-| food_name    | string | null: false |
-| food_content | text   | null: false |
-
-## food model association
-- has_many :food_recipes
-- has_many :recipes through: :food_recipes
-- has_many :food_nutrients
-- has_many :nutrients through: :food_nutrients
-
-## food_recipes table
-| Column   | Type      | Options                       |
-| -------- | --------- | ----------------------------- |
-| food     | reference | null: false foreign_key: true |
-| recipe   | reference | null: false foreign_key: true |
-
-## food recipes model association
-- belongs_to :food
-- belongs_to :recipe
-
 ## nutrients table
 | Column           | Type   | Options     |
 | ---------------- | ------ | ----------- |
@@ -96,17 +75,17 @@
 | nutrient_content | text   | null: false |
 
 ## nutrient model association
-- has_many :food_nutrient
-- has_many :foods through: :food_nutrient
+- has_many :recipe_nutrients
+- has_many :recipes through: :recipe_nutrients
 
-## food_nutrients table
+## recipe_nutrients table
 | Column   | Type      | Options                       |
 | -------- | --------- | ----------------------------- |
-| food     | reference | null: false foreign_key: true |
+| recipe   | reference | null: false foreign_key: true |
 | nutrient | reference | null: false foreign_key: true |
 
-## food nutrient model association
-- belongs_to: food
+## recipe nutrient model association
+- belongs_to: recipe
 - belongs_to: nutrient
 
 ## tags table association
