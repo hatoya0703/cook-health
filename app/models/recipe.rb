@@ -10,4 +10,11 @@ class Recipe < ApplicationRecord
   has_many :favorite_users, through: :favorites, source: :user
   has_many :recipe_tags
   has_many :tags, through: :recipe_tags
+
+  # ActiveHashのアソシエーション
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :category
+
+  # ActiveStorageのアソシエーション
+  has_many_attached :images
 end
