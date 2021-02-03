@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_01_062720) do
+ActiveRecord::Schema.define(version: 2021_02_03_065231) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -52,31 +52,6 @@ ActiveRecord::Schema.define(version: 2021_02_01_062720) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
-  create_table "food_nutrients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "food_id", null: false, comment: "対応食材"
-    t.bigint "nutrient_id", null: false, comment: "対応栄養"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["food_id"], name: "index_food_nutrients_on_food_id"
-    t.index ["nutrient_id"], name: "index_food_nutrients_on_nutrient_id"
-  end
-
-  create_table "food_recipes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "food_id", null: false, comment: "対応食材"
-    t.bigint "recipe_id", null: false, comment: "対応レシピ"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["food_id"], name: "index_food_recipes_on_food_id"
-    t.index ["recipe_id"], name: "index_food_recipes_on_recipe_id"
-  end
-
-  create_table "foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "food_name", null: false, comment: "食材名"
-    t.text "food_content", null: false, comment: "食材の説明"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "ingredients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "material", null: false, comment: "材料名"
     t.string "quantity", null: false, comment: "分量"
@@ -91,6 +66,15 @@ ActiveRecord::Schema.define(version: 2021_02_01_062720) do
     t.text "nutrient_content", null: false, comment: "栄養の説明"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "recipe_nutrients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "recipe_id", null: false, comment: "対応レシピ"
+    t.bigint "nutrient_id", null: false, comment: "対応栄養"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["nutrient_id"], name: "index_recipe_nutrients_on_nutrient_id"
+    t.index ["recipe_id"], name: "index_recipe_nutrients_on_recipe_id"
   end
 
   create_table "recipe_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -109,6 +93,7 @@ ActiveRecord::Schema.define(version: 2021_02_01_062720) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "category_id"
+    t.text "description", comment: "レシピの説明"
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
@@ -136,11 +121,9 @@ ActiveRecord::Schema.define(version: 2021_02_01_062720) do
   add_foreign_key "comments", "users"
   add_foreign_key "favorites", "recipes"
   add_foreign_key "favorites", "users"
-  add_foreign_key "food_nutrients", "foods"
-  add_foreign_key "food_nutrients", "nutrients"
-  add_foreign_key "food_recipes", "foods"
-  add_foreign_key "food_recipes", "recipes"
   add_foreign_key "ingredients", "recipes"
+  add_foreign_key "recipe_nutrients", "nutrients"
+  add_foreign_key "recipe_nutrients", "recipes"
   add_foreign_key "recipe_tags", "recipes"
   add_foreign_key "recipe_tags", "tags"
   add_foreign_key "recipes", "users"
