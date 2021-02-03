@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :food_recipe do
+  factory :recipe_nutrient do
     
   end
 end
