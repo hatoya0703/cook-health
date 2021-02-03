@@ -9,7 +9,8 @@
     <%= link_to "レシピを投稿する", new_recipe_path, data:{"turbolinks" => false} %>
   </div>
   <div class="header-main-content">
-    <div class="menu"> <!-- アコーディオンここから -->
+    <div class="menu">
+    <!-- アコーディオンここから -->
       <a href="#" class="btn">Menu</a>
       <ul class="nav">
         <li><%= link_to "マイページ", user_path(current_user.id), data:{"turbolinks" => false} %></li>
@@ -17,7 +18,6 @@
       </ul>
     </div> 
     <%# ログイン/ログアウト機能,ユーザーメニュー実装予定 %>
-
 
     <ul class="user-session">
       <% if user_signed_in? %>
