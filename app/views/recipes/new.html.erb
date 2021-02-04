@@ -16,6 +16,9 @@
     <%= f.text_field :material, placeholder:"材料名"%>
     <%= f.text_field :quantity, placeholder:"分量"%>
     <%= f.text_area :description, placeholder: "作り方" %>
+    <%= f.collection_check_boxes :nutrient_ids, Nutrient.all, :id, :nutrient_name do |n| %>
+      <% n.label { n.check_box + n.text} %>
+    <% end %>
     <%= f.submit "投稿する" %>
   <% end %>
 </div>
