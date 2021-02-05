@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.includes(:user)
   end
 
   def new
@@ -11,7 +11,6 @@ class RecipesController < ApplicationController
   def create
     @recipe = RecipeIngredient.new(recipe_params)
     tag_list = params[:recipe_ingredient][:tag_name].split(',')
-    binding.pry
     @recipe.find_or_create_tags(tag_list)
     @recipe.save
     redirect_to user_path(current_user.id)
