@@ -1,13 +1,8 @@
-$(document).on('turbolinks:load', function(){
-  var date = [
-    "aaaa",
-    "bbbb",
-    "cccc",
-  ];
-  $("#suggest").autocomplete({
-    source: date,
+$(function(){  
+  
+  $("#recipe_ingredient_tag_name").autocomplete({
+    source: "/recipes/auto_complete.json",
     autoFocus: true,
-    delay: 300,
     minLength: 1
   });
 });

@@ -24,4 +24,6 @@
   <% end %>
 </div>
 
+<div id="tags" data-tags="<%= @tags.to_json(only:[:tag_name]) %>"></div>
+
 <%= render "shared/footer" %>

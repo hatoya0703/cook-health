@@ -8,11 +8,13 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("jquery")
-require("jquery-ui");
 require("../tab")
 require("../menu")
 require("../preview")
 require("../search")
+require("jquery-ui")
+
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
