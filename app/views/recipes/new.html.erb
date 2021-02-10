@@ -19,7 +19,7 @@
     <%= f.collection_check_boxes :nutrient_ids, Nutrient.all, :id, :nutrient_name do |n| %>
       <% n.label { n.check_box + n.text} %>
     <% end %>
-    <%= f.text_field :tag_name, placeholder:"タグを登録してください。複数つけるには','で区切ってください。" %>
+    <%= f.text_field :tag_name, id:"formTagInput", class:"form-control", placeholder:"タグを登録してください。複数つけるには','で区切ってください。" %>
     <%= f.submit "投稿する" %>
   <% end %>
 </div>

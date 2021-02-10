@@ -17,7 +17,8 @@ class RecipesController < ApplicationController
   end
 
   def auto_complete
-    @tags = Tag.select(:tag_name).where("tag_name like '%" + params[:term] + "%'")
+    @tags = Tag.select(:tag_name)
+    #.where("tag_name like '%" + params[:term] + "%'")
     @auto_complete_tags = @tags.map(&:tag_name)
     render json: @auto_complete_tags.to_json
   end

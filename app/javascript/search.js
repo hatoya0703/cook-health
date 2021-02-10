@@ -1,6 +1,6 @@
 $(function(){  
   
-  $("#recipe_ingredient_tag_name").autocomplete({
+  $("#formTagInput").autocomplete({
     source: "/recipes/auto_complete.json",
     autoFocus: true,
     minLength: 1
