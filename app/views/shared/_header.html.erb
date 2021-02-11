@@ -13,12 +13,13 @@
     <!-- アコーディオンここから -->
       <a href="#" class="btn">Menu</a>
       <ul class="nav">
+      <% if user_signed_in? %>
         <li><%= link_to "マイページ", user_path(current_user.id), data:{"turbolinks" => false} %></li>
+      <% end %>
         <li><%= link_to "ヘルプ", "" %></li>
       </ul>
     </div> 
     <%# ログイン/ログアウト機能,ユーザーメニュー実装予定 %>
-
     <ul class="user-session">
       <% if user_signed_in? %>
         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_065231) do
+ActiveRecord::Schema.define(version: 2021_02_03_105557) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2021_02_03_065231) do
   end
 
   create_table "nutrients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "nurtrient_name", null: false, comment: "栄養名"
+    t.string "nutrient_name", null: false
     t.text "nutrient_content", null: false, comment: "栄養の説明"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 2021_02_03_065231) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "category_id"
-    t.text "description", comment: "レシピの説明"
+    t.text "description", null: false, comment: "レシピの説明"
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
