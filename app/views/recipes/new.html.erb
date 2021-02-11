@@ -1,5 +1,3 @@
-<%= render "shared/header"%>
-
 <div class="recipe-post-form">
   <%= form_with model: @recipe, url:recipes_path, local: true do |f| %>
     <div class="recipe-post-text">
@@ -23,5 +21,3 @@
     <%= f.submit "投稿する" %>
   <% end %>
 </div>
-
-<%= render "shared/footer" %>
