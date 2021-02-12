@@ -2,6 +2,11 @@ li{
   list-style: none;
 }
 
+.main-content{
+  position: absolute;
+  top: 50px;
+}
+
 .recipe-list{
   text-decoration: none;
 }
@@ -23,7 +28,7 @@ li{
 }
 
 .main-content {
-  height: 300vh;
+  height: 80vh;
   display: flex;
 }
 
@@ -43,4 +48,8 @@ li{
   height: 35vh;
   width: 100%;
   background-color: honeydew;
+}
+
+nav.pagination {
+  display: none;
 }

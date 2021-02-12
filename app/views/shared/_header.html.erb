@@ -3,13 +3,17 @@
     <%= link_to "Cook-Health", root_path %>
   </div>
   <div class="header-search">
-    検索フォーム実装予定
+    <%= search_form_for @search, url: recipes_path do |f| %>
+      <%= f.text_field :title_cont, placeholder: "レシピ名で検索" %>
+      <%= f.submit ("検索する") %>
+    <% end %>
   </div>
   <div class="recipe-post-btn">
     <%= link_to "レシピを投稿する", new_recipe_path, data:{"turbolinks" => false} %>
   </div>
   <div class="header-main-content">
-    <div class="menu"> <!-- アコーディオンここから -->
+    <div class="menu">
+    <!-- アコーディオンここから -->
       <a href="#" class="btn">Menu</a>
       <ul class="nav">
       <% if user_signed_in? %>

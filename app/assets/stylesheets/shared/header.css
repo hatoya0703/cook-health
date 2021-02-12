@@ -1,5 +1,7 @@
 .header-content{
-  height: 20vh;
+  z-index: 2;
+  position: fixed;
+  height: 50px;
   width: 100vw;
   display: flex;
   background-color: khaki;
