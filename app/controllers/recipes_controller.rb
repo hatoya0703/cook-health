@@ -18,6 +18,11 @@ class RecipesController < ApplicationController
     redirect_to user_path(current_user.id)
   end
 
+  def destroy
+    Recipe.find(params[:id]).destroy
+    redirect_to root_path
+  end
+
   def auto_complete #機能せず
     @tags = Tag.select(:tag_name).where("tag_name like '%" + params[:term] + "%'")
     @auto_complete_tags = @tags.map(&:tag_name)
