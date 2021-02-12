@@ -13,7 +13,16 @@
     </div>
     <%= image_tag @recipe.images[0], class: "recipe-image-content" if @recipe.images.attached? %>
   </div>
-  <%= @recipe.comments.comment_content %>
+  
+  <% @comments.each do |comment| %>
+    <%= comment.comment_content %>
+  <% end %>
+
+  <%= form_with(model: [@recipe,@comment], url: comments_path, method: :post) do |c| %>
+    <%= c.text_area :comment_content %>
+    <%= c.submit "コメントする" %>
+    <%= c.hidden_field :recipe_id, value: @recipe.id %>
+  <% end %>
 </div>
 
 
