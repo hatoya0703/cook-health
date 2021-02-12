@@ -5,7 +5,16 @@
         人気のレシピタグ一覧
       </div>
       <div class="highright-tags-contents">
-        Tagクラスからデータ取得して表示
+        <p>複雑な検索</p>
+        <%= search_form_for @search, url: recipes_path do |f| %>
+          <%= f.text_field :title_cont, placeholder: "レシピ名で検索" %>
+          <%= f.label :category_id_eq, "カテゴリ"%>
+          <%= f.collection_select :category_id_eq, Category.all, :id, :name, include_blanck: "指定なし" %>
+          <%= f.collection_check_boxes :nutrients_id_eq, Nutrient.all, :id, :nutrient_name do |n| %>
+            <% n.label { n.check_box + n.text} %>
+          <% end %>
+          <%= f.submit ("検索する") %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -53,3 +62,4 @@
     追加実装項目）
   </div>
 </div>
+<% binding.pry %>
