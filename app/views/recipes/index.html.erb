@@ -29,7 +29,7 @@
           <li>
             <div class="lists">
               <%# list要素をリンク化%>
-              <%= link_to "#",class: "recipe-list" do %>
+              <%= link_to recipe_path(r.id),class: "recipe-list" do %>
                 <div class="recipe-list-contents">
                   <div class="recipe-text-contents">
                     <h3 class="recipe-title">
