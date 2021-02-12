@@ -1,5 +1,7 @@
 .footer-content{
-  height: 15vh;
+  position: fixed;
+  bottom: 0;
+  height: 10vh;
   width: 100vw;
   display: flex;
   background-color: lightcoral;
