@@ -9,7 +9,7 @@
         <%= search_form_for @search, url: recipes_path do |f| %>
           <%= f.text_field :title_cont, placeholder: "レシピ名で検索" %>
           <%= f.label :category_id_eq, "カテゴリ"%>
-          <%= f.collection_select :category_id_eq, Category.all, :id, :name, include_blanck: "指定なし" %>
+          <%= f.collection_select :category_id_eq, Category.all, :id, :name, include_blank: "指定なし" %>
           <%= f.collection_check_boxes :nutrients_id_eq, Nutrient.all, :id, :nutrient_name do |n| %>
             <% n.label { n.check_box + n.text} %>
           <% end %>
