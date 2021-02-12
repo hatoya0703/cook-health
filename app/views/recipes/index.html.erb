@@ -15,7 +15,7 @@
     </div>
     <div class="highlight-recipes-content">
       <ul class="recipe-lists">
-        <% @recipes.each do |r| %>
+        <% @search_recipes.each do |r| %>
           <li>
             <div class="lists">
               <%# list要素をリンク化%>
@@ -32,7 +32,7 @@
                       <%= r.content %>
                     </p>
                   </div>
-                  <%= image_tag "sample.png", class: "recipe-image-content"%>
+                  <%= image_tag r.images[0], class: "recipe-image-content" if r.images.attached? %>
                 </div>
               <% end %>
             </div>

@@ -1,0 +1,20 @@
+    <div class="lists">
+      <%# list要素をリンク化%>
+      <%= link_to "#",class: "recipe-list" do %>
+        <div class="recipe-list-contents">
+          <div class="recipe-text-contents">
+            <h3 class="recipe-title">
+              <%= recipe.title %>
+            </h3>
+            <span class="recipe-user">
+              <%= recipe.user.nickname %>
+            </span>
+            <p>
+              <%= recipe.content %>
+            </p>
+          </div>
+          <%= image_tag recipe.images[0], class: "recipe-image-content" if recipe.images.attached? %>
+        </div>
+      <% end %>
+    </div>
+    <%# /list要素をリンク化%>
