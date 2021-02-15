@@ -2,12 +2,18 @@ class RecipesController < ApplicationController
   
   before_action :search_recipe
   
+  def new
+    @recipe = RecipeIngredient.new
+  end
+
   def index
     @result = @r.result
   end
 
-  def new
-    @recipe = RecipeIngredient.new
+  def show
+    @recipe = Recipe.find(params[:id])
+    @comment = current_user.comments.new
+    @comments = @recipe.comments.order(id: "DESC")
   end
 
   def create
