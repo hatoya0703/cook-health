@@ -18,8 +18,6 @@
   <% @comments.each do |comment| %>
     <div class="comment-content"><%= comment.comment_content %></div>
   <% end %>
-  <div id="comment-list">
-  </div>
 
   <%= form_with(model: [@recipe,@comment], url: comments_path, method: :post, id: "comment-form")  do |c| %>
     <%= c.text_area :comment_content %>
