@@ -16,7 +16,7 @@ require("../menu")
 require("../preview")
 require("../tag")
 require("../scroll")
-
+require("../comment")
 
 
 

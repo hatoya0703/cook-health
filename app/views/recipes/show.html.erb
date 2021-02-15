@@ -14,14 +14,17 @@
     <%= image_tag @recipe.images[0], class: "recipe-image-content" if @recipe.images.attached? %>
   </div>
   
+  <div class="posted-comment"></div>
   <% @comments.each do |comment| %>
-    <%= comment.comment_content %>
+    <div class="comment-content"><%= comment.comment_content %></div>
   <% end %>
+  <div id="comment-list">
+  </div>
 
-  <%= form_with(model: [@recipe,@comment], url: comments_path, method: :post) do |c| %>
+  <%= form_with(model: [@recipe,@comment], url: comments_path, method: :post, id: "comment-form")  do |c| %>
     <%= c.text_area :comment_content %>
-    <%= c.submit "コメントする" %>
     <%= c.hidden_field :recipe_id, value: @recipe.id %>
+    <%= c.submit "コメントする", id: "comment-submit" %>
   <% end %>
 </div>
 
