@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     collection do
       get "auto_complete"
     end
+    resources :favorites, only: [:create, :destroy]
   end
   resources :users, only: :show
   resources :comments, only: [:create, :destroy]
