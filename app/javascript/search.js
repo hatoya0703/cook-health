@@ -6,3 +6,5 @@ $(function(){
     minLength: 1
   });
 });
+
+// JQuery-UIに備わっているauto-complete機能を使用するため、未使用
