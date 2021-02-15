@@ -3,12 +3,12 @@ $(window).on("load",function(){
     // コメント挿入用要素をセットするファンクションを定義しておく
     const html = `<div class="comment-content">${comment.comment_content}</div>`
     // 代入結果を呼び出し元に戻すためのreturn
-    return html
+    return html;
   }
     // コメント送信した時に発火
-    $("#comment-form").on("submit",function(e){
+    $("#comment-form").on('click',function(e){
       // 送信ボタンの標準動作を停止
-      e.preventDefault;
+      e.preventDefault();
       // 呼び出し元(#comment-form)のフォームの入力データを取得
       const formData = new FormData($(this).get(0));
       // 呼び出し元(#comment-form)のactionの値(/comments)を取得え
@@ -18,7 +18,7 @@ $(window).on("load",function(){
         url: url,
         type: "post",
         data: formData,
-        dataType: "json",
+        dataType: "json",      // comments/create.json.jbuilderによってフォームから送られたparamsをJSON化
         processData: false,
         contentType: false
       })
