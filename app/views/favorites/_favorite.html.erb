@@ -8,7 +8,7 @@
   <span class="star-icon1"><%= recipe.favorites.count %></span>
 <% else %>
   <%= link_to recipe_favorite_path(recipe_id: recipe.id, id: recipe.favorites[0].id), method: :delete, remote: true, class:"favorite-btn" do %>
-    <i class="fas fa-star star-icon2"></i>
+    <i class="fas fa-star star-icon2">☆</i>
   <% end %>
   <span class="star-count2"><%= recipe.favorites.count %></span>
 <% end %> 
