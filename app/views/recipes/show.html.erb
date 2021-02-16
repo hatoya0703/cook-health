@@ -1,6 +1,9 @@
 <div class="lists">
   <div class="recipe-list-contents">
     <div class="recipe-text-contents">
+      <div class='star-btn' id="favorite_<%= @recipe.id %>">
+         <%= render "favorites/favorite", recipe: @recipe %>
+      </div>
       <h3 class="recipe-title">
         <%= @recipe.title %>
       </h3>
