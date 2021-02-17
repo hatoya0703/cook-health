@@ -6,7 +6,6 @@ class FavoritesController < ApplicationController
     if current_user.id != @recipe.user_id
       @favorite = Favorite.create(user_id: current_user.id, recipe_id: @recipe.id)
     end
-    binding.pry
   end
 
   def destroy
