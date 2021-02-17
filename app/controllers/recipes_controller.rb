@@ -14,6 +14,8 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @comment = current_user.comments.new
     @comments = @recipe.comments.order(id: "DESC")
+    favorites = Favorite.where(user_id: current_user.id).order(created_at: :DESC).pluck(:recipe_id)
+    @favorite_recipes = Recipe.find(favorites)
   end
 
   def create

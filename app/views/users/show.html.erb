@@ -8,7 +8,16 @@
   <div class="user-recipe-contents">
     <ul class="tab-lists">
       <li class="my-recipes"><a href="#">マイレシピ</a></li>
-      <li class="favorite-recipes"><a href="#">お気に入りレシピ</a></li>
+      <li class="favorite-recipes">
+        <a href="#">お気に入りレシピ
+          <% if @favorite_recipes.present? %>
+            <% @favorite_recipes.each do |recipe| %>
+              <%= recipe.title %>
+              <%= recipe.user.content %>
+            <% end %>
+          <% end %>
+        </a>
+      </li>
     </ul>
     <ul class="tab-contents">
       <li class="my-recipes">

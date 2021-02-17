@@ -10,7 +10,7 @@
           <%= f.text_field :title_cont, placeholder: "レシピ名で検索" %>
           <%= f.label :category_id_eq, "カテゴリ"%>
           <%= f.collection_select :category_id_eq, Category.all, :id, :name, include_blank: "指定なし" %>
-          <%= f.collection_check_boxes :nutrients_id_eq, Nutrient.all, :id, :nutrient_name do |n| %>
+          <%= f.collection_check_boxes :nutrients_id_eq_any, Nutrient.all, :id, :nutrient_name do |n| %>
             <% n.label { n.check_box + n.text} %>
           <% end %>
           <%= f.select( :sorts, {"並び替え": "id desc", "投稿が新しい順": "id desc", "投稿が古い順": "id asc"} ) %>
