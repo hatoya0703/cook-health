@@ -1,19 +1,46 @@
-.header-content{
+a{
+  text-decoration: none;
+}
+
+.header-all{
   z-index: 2;
   position: fixed;
-  height: 50px;
+  height: 60px;
   width: 100vw;
-  display: flex;
   background-color: khaki;
+}
+
+.header-content{
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .header-logo{
   height: 100%;
-  width: 10vw;
+  width: 400px;
+  padding: 5px 0px 5px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-text{
+  font-family:'Chalkduster','Brush Script MT','Mv Boli','HanziPen SC','MS UI Gothic','ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+  font-size: 2rem;
 }
 
 .header-search{
   width: 30vw;
+  justify-content: center;
+}
+
+.recipe_search{
+  
+  justify-content: center;
+}
+
+.recipe-post-btn>a{
+  font-family:'Chalkduster','Brush Script MT','Mv Boli','HanziPen SC','MS UI Gothic','ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
 }
 
 .header-main-content{
@@ -21,6 +48,23 @@
   display: flex;
 }
 
+.menu{
+  font-family:'Chalkduster','Brush Script MT','Mv Boli','HanziPen SC','MS UI Gothic','ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+}
+
+ul.user-session li a{
+  font-family:'Chalkduster','Brush Script MT','Mv Boli','HanziPen SC','MS UI Gothic','ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+}
+
 ul.nav{
   display: none;
+}
+
+.menu ul.nav li a{
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-top: none;
+  box-sizing: border-box;
 }

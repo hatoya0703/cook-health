@@ -1,27 +1,17 @@
-<div class="header-content">
-  <div class="header-logo">
-    <%= link_to "Cook-Health", root_path %>
-  </div>
-  <div class="header-search">
-    <%= search_form_for @search, url: recipes_path do |f| %>
-      <%= f.text_field :title_cont, placeholder: "レシピ名で検索" %>
-      <%= f.submit ("検索する") %>
-    <% end %>
-  </div>
-  <div class="recipe-post-btn">
-    <%= link_to "レシピを投稿する", new_recipe_path, data:{"turbolinks" => false} %>
-  </div>
-  <div class="header-main-content">
-    <div class="menu">
-    <!-- アコーディオンここから -->
-      <a href="#" class="btn">Menu</a>
-      <ul class="nav">
-      <% if user_signed_in? %>
-        <li><%= link_to "マイページ", user_path(current_user.id), data:{"turbolinks" => false} %></li>
+<div class="header-all">
+  <div class="header-content">
+    <div class="header-logo">
+      <%= link_to("Cook Health", root_path, {class:"logo-text"}) %>
+    </div>
+    <div class="header-search"> 
+      <%= search_form_for @search, url: recipes_path do |f| %>
+        <%= f.text_field :title_cont, placeholder: "レシピ名で検索" %>
+        <%= f.submit ("検索する") %>
       <% end %>
-        <li><%= link_to "ヘルプ", "" %></li>
-      </ul>
-    </div> 
+    </div>
+    <div class="recipe-post-btn">
+      <%= link_to "レシピを投稿する", new_recipe_path, data:{"turbolinks" => false} %>
+    </div>    
     <%# ログイン/ログアウト機能,ユーザーメニュー実装予定 %>
     <ul class="user-session">
       <% if user_signed_in? %>
@@ -31,6 +21,17 @@
         <li><%= link_to "新規登録", new_user_registration_path %></li>
       <% end %>
     </ul>
-
+    <div class="menu">
+    <!-- アコーディオンここから -->
+      <a href="#" class="btn">Menu</a>
+      <div class="inner">
+        <ul class="nav">
+        <% if user_signed_in? %>
+          <li><%= link_to "マイページ", user_path(current_user.id), data:{"turbolinks" => false} %></li>
+        <% end %>
+          <li><%= link_to "ヘルプ", "" %></li>
+        </ul>
+      </div>
+    </div> 
   </div>
 </div>
