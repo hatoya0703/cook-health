@@ -35,7 +35,6 @@ a{
 }
 
 .recipe_search{
-  
   justify-content: center;
 }
 
@@ -50,6 +49,10 @@ a{
 
 .menu{
   font-family:'Chalkduster','Brush Script MT','Mv Boli','HanziPen SC','MS UI Gothic','ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+}
+
+ul.user-session{
+  display: flex;
 }
 
 ul.user-session li a{
