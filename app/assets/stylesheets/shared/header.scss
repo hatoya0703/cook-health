@@ -5,9 +5,9 @@ a{
 .header-all{
   z-index: 2;
   position: fixed;
-  height: 60px;
+  height: 8vh;
   width: 100vw;
-  background-color: khaki;
+  background-color:#6ef3d6;
   display: flex;
 }
 
@@ -17,9 +17,6 @@ a{
   height: 100%;
 }
 
-.header-content > .menu{
-  display: absolute;
-}
 
 .header-logo{
   height: 100%;
@@ -58,7 +55,8 @@ a{
 }
 
 .menu{
-  align-items: normal;
+  position: relative;
+  top: 20px;
   font-family:'Chalkduster','Brush Script MT','Mv Boli','HanziPen SC','MS UI Gothic','ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
 }
 

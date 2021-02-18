@@ -3,8 +3,9 @@ li{
 }
 
 .main-content{
-  position: absolute;
-  top: 50px;
+  position: relative;
+  height: 87vh;
+  display: flex;
 }
 
 .recipe-list{
@@ -13,6 +14,7 @@ li{
 
 .recipe-list-contents{
   display: flex;
+
   border-bottom: 10px solid green;
 }
 
@@ -27,27 +29,15 @@ li{
   padding: 50px;
 }
 
-.main-content {
-  height: 80vh;
-  display: flex;
-}
-
 .left-content {
   height: 100%;
   width: 22vw;
-  background-color: burlywood;
+  background-color: #cefff1;
 }
 
 .center-content {
   height: 100%;
-  
-  background-color: deepskyblue;
-}
-
-.contact {
-  height: 35vh;
-  width: 100%;
-  background-color: honeydew;
+  background-color: #ace7ef;
 }
 
 nav.pagination {
