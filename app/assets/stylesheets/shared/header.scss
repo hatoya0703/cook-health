@@ -8,6 +8,7 @@ a{
   height: 60px;
   width: 100vw;
   background-color: khaki;
+  display: flex;
 }
 
 .header-content{
@@ -16,9 +17,13 @@ a{
   height: 100%;
 }
 
+.header-content > .menu{
+  display: absolute;
+}
+
 .header-logo{
   height: 100%;
-  width: 400px;
+  width: 350px;
   padding: 5px 0px 5px 0px;
   display: flex;
   justify-content: center;
@@ -30,13 +35,18 @@ a{
 }
 
 .header-search{
-  width: 30vw;
+  width: 25vw;
   justify-content: center;
 }
 
 .recipe_search{
   justify-content: center;
 }
+
+.recipe-post-btn{
+  margin: 0 20px;
+}
+
 
 .recipe-post-btn>a{
   font-family:'Chalkduster','Brush Script MT','Mv Boli','HanziPen SC','MS UI Gothic','ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
@@ -48,11 +58,13 @@ a{
 }
 
 .menu{
+  align-items: normal;
   font-family:'Chalkduster','Brush Script MT','Mv Boli','HanziPen SC','MS UI Gothic','ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
 }
 
 ul.user-session{
   display: flex;
+  margin: 0 20px;
 }
 
 ul.user-session li a{
