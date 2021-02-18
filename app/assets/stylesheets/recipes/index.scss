@@ -1,3 +1,7 @@
+// 〜〜〜〜ページ全体〜〜〜〜
+
+$font_pop:'Chalkboard SE','PT Mono','Courier','Verdana','Hannotate TC','ヒラギノ角ゴシック','Hiragino Sans','ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+
 li{
   list-style: none;
 }
@@ -9,8 +13,58 @@ li{
   box-sizing: border-box;
   display: flex;
   padding-bottom: 5vh;
+  
+  p{
+    margin-bottom: 5vh;
+    text-align: center;
+  }
 }
 
+// 〜〜〜〜ページ全体〜〜〜〜
+
+
+// 〜〜〜〜左側のコンテンツ〜〜〜〜
+
+.left-content {
+  box-sizing: border-box;
+  min-height: 92vh;
+  width: 27vw;
+  padding: 3vh 3vh 0 3vh;
+  background-color: #cefff1;
+  *{
+    font-family: $font_pop;
+  }
+}
+
+.complex-search{
+  .recipe_search{
+    display: block;
+    label{
+      display: block;
+      &.item{
+        margin-top: 5vh;
+      }
+    }
+    input{
+      &[name="commit"]{
+        display: block;
+      }
+    }
+  }
+}
+
+#q_title_cont{
+  margin-bottom: 5vh;
+}
+
+select{
+  margin-bottom: 5vh;
+}
+
+// 〜〜〜〜左側のコンテンツ〜〜〜〜
+
+
+// 〜〜〜〜中央のコンテンツ〜〜〜〜
 .recipe-list{
   text-decoration: none;
 }
@@ -23,19 +77,13 @@ li{
 
 .recipe-text-contents{
   box-sizing: border-box;
-  width: 40vw;
+  width: 35vw;
 }
 
 .recipe-image-content{
   box-sizing: border-box;
   width: 38vw;
   padding: 50px;
-}
-
-.left-content {
-  min-height: 92vh;
-  width: 22vw;
-  background-color: #cefff1;
 }
 
 .center-content {
@@ -46,3 +94,5 @@ li{
 nav.pagination {
   display: none;
 }
+
+// 〜〜〜〜中央のコンテンツ〜〜〜〜

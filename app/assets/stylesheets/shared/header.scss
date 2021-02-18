@@ -1,3 +1,5 @@
+$font_pop:'Chalkboard SE','PT Mono','Courier','Verdana','Hannotate TC','ヒラギノ角ゴシック','Hiragino Sans','ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+
 a{
   text-decoration: none;
 }
@@ -27,17 +29,13 @@ a{
 }
 
 .logo-text{
-  font-family:'Chalkduster','Brush Script MT','Mv Boli','HanziPen SC','MS UI Gothic','ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+  font-family: $font_pop;
   font-size: 2rem;
 }
 
 .header-search{
   width: 25vw;
-  justify-content: center;
-}
-
-.recipe_search{
-  justify-content: center;
+  
 }
 
 .recipe-post-btn{
@@ -46,7 +44,7 @@ a{
 
 
 .recipe-post-btn>a{
-  font-family:'Chalkduster','Brush Script MT','Mv Boli','HanziPen SC','MS UI Gothic','ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+  font-family: $font_pop;
 }
 
 .header-main-content{
@@ -57,7 +55,7 @@ a{
 .menu{
   position: relative;
   top: 20px;
-  font-family:'Chalkduster','Brush Script MT','Mv Boli','HanziPen SC','MS UI Gothic','ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+  font-family: $font_pop;
 }
 
 ul.user-session{
@@ -66,7 +64,7 @@ ul.user-session{
 }
 
 ul.user-session li a{
-  font-family:'Chalkduster','Brush Script MT','Mv Boli','HanziPen SC','MS UI Gothic','ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+  font-family: $font_pop;
 }
 
 ul.nav{
