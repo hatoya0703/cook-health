@@ -1,0 +1,15 @@
+    <div class="complex-search">
+      <p>様々な条件で検索</p>
+      <%= search_form_for @search, url: recipes_path do |f| %>
+        <%= f.text_field :title_cont, placeholder: "レシピ名" %>
+        <%= f.label :category_id_eq, "カテゴリ"%>
+        <%= f.collection_select :category_id_eq, Category.all, :id, :name, include_blank: "指定なし" %>
+        <%= f.label "栄養" %>
+        <%= f.collection_check_boxes :nutrients_id_eq_any, Nutrient.all, :id, :nutrient_name do |n| %>
+          <% n.label { n.check_box + n.text} %>
+        <% end %>
+        <%= f.label :category_id_eq, "表示順", class:"item" %>
+        <%= f.select( :sorts, {"並び替え": "id desc", "投稿が新しい順": "id desc", "投稿が古い順": "id asc"} ) %>
+        <%= f.submit ("検索する") %>
+      <% end %>
+    </div>

@@ -16,6 +16,11 @@
  *= require jquery.tagsinput.min
  */
 
+*{
+  font-family:'Chalkboard SE','PT Mono','Courier','Verdana','Hannotate TC','ヒラギノ角ゴシック','Hiragino Sans','ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+  
+}
+
  body{
    background-color:#6ef3d6;
  }
