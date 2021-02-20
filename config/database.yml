@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: cook_health_production
-  username: cook_health
-  password: <%= ENV['COOK_HEALTH_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
