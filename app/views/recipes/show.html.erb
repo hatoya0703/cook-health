@@ -1,36 +1,40 @@
-<div class="lists">
-  <div class="recipe-list-contents">
+<div class="recipe-show">
+  <%= render "shared/complex_search" %>
+  <div class="recipe-show-contents">
     <div class="recipe-text-contents">
-      <div class='star-btn' id="favorite_<%= @recipe.id %>">
-         <%= render "favorites/favorite", recipe: @recipe %>
-      </div>
       <h3 class="recipe-title">
         <%= @recipe.title %>
       </h3>
+      <br>
+      <div class='star-btn' id="favorite_<%= @recipe.id %>">
+        <%= render "favorites/favorite", recipe: @recipe %>
+      </div>
+      <br>
       <span class="recipe-user">
         <%= @recipe.user.nickname %>
       </span>
+      <br>
+      <br>
       <p>
         <%= @recipe.content %>
       </p>
     </div>
+    <br>
     <%= image_tag @recipe.images[0], class: "recipe-image-content" if @recipe.images.attached? %>
+    <%= link_to "削除する", recipe_path(params[:id]), method: :delete %>
+    <br>
+    <br>
+    <p>＝＝＝コメント＝＝＝</p>
+    <%= form_with(model: [@recipe,@comment], url: comments_path, method: :post, id: "comment-form")  do |c| %>
+      <%= c.text_area :comment_content %>
+      <%= c.hidden_field :recipe_id, value: @recipe.id %>
+      <%= c.submit "コメントする", id: "comment-submit" %>
+    <% end %>
+    <div class="posted-comment"></div>
+    <% @comments.each do |comment| %>
+      <div class="comment-content"><%= comment.comment_content %></div>
+    <% end %>
   </div>
-  
-  <div class="posted-comment"></div>
-  <% @comments.each do |comment| %>
-    <div class="comment-content"><%= comment.comment_content %></div>
-  <% end %>
-
-  <%= form_with(model: [@recipe,@comment], url: comments_path, method: :post, id: "comment-form")  do |c| %>
-    <%= c.text_area :comment_content %>
-    <%= c.hidden_field :recipe_id, value: @recipe.id %>
-    <%= c.submit "コメントする", id: "comment-submit" %>
-  <% end %>
 </div>
 
-
-<%= link_to "削除する", recipe_path(params[:id]), method: :delete %><br>
-<%= link_to "削除する", recipe_path(params[:id]), method: :delete %><br>
-<%= link_to "削除する", recipe_path(params[:id]), method: :delete %><br>
-<%= link_to "削除する", recipe_path(params[:id]), method: :delete %>
+<%= render "shared/footer" %>

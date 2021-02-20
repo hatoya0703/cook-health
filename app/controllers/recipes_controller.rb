@@ -23,7 +23,7 @@ class RecipesController < ApplicationController
     tag_list = params[:recipe_ingredient][:tag_name].split(',')
     @recipe.find_or_create_tags(tag_list)
     @recipe.save
-    redirect_to user_path(current_user.id)
+    redirect_to root_path
   end
 
   def destroy
