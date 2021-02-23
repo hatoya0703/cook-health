@@ -41,12 +41,11 @@ class RecipesController < ApplicationController
 
   private
   def recipe_params
-    params.require(:recipe_ingredient).permit(:title, :content, :category_id, :description, :material, :quantity, :tag_name, tag_ids:[], images:[], nutrient_ids:[]).merge(user_id: current_user.id, tag_ids:[])
+    params.require(:recipe_ingredient).permit(:title, :content, :category_id, :description, :material, :quantity, images:[], nutrient_ids:[]).merge(user_id: current_user.id, tag_ids:[])
   end
 
   def search_recipe
     @r = Recipe.ransack(params[:q])
   end
-
 
 end
