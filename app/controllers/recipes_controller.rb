@@ -22,9 +22,13 @@ class RecipesController < ApplicationController
     @recipe = RecipeIngredient.new(recipe_params)
     tag_list = params[:recipe_ingredient][:tag_name].split(',')
     @recipe.find_or_create_tags(tag_list)
-    @recipe.save
-    binding.pry
-    redirect_to root_path
+    if @recipe.valid?
+      @recipe.save
+      redirect_to root_path
+    else
+      render :new
+    end
+    
   end
 
   def destroy
@@ -41,7 +45,7 @@ class RecipesController < ApplicationController
 
   private
   def recipe_params
-    params.require(:recipe_ingredient).permit(:title, :content, :category_id, :description, :material, :quantity, images:[], nutrient_ids:[]).merge(user_id: current_user.id, tag_ids:[])
+    params.require(:recipe_ingredient).permit(:title, :content, :category_id, :description, :material,:tag_name, :quantity, images:[], nutrient_ids:[]).merge(user_id: current_user.id, tag_ids:[])
   end
 
   def search_recipe

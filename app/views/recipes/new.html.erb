@@ -1,5 +1,6 @@
 <div class="recipe-post-form">
   <%= form_with model: @recipe, url:recipes_path, local: true do |f| %>
+    <%= render "shared/error_message", model: f.object %>
     <div class="recipe-post-text">
       レシピを投稿する
     </div>

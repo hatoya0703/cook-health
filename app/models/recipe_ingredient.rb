@@ -2,6 +2,18 @@ class RecipeIngredient
   include ActiveModel::Model
   attr_accessor :title, :content, :category_id, :description, :material, :quantity, :user_id, :images, :nutrient_ids, :tag_ids, :tag_name
   
+  # バリデーション
+  with_options presence: true do
+    validates :title
+    validates :description
+    validates :category_id
+    validates :images
+    validates :material
+    validates :quantity
+    validates :content
+    validates :nutrient_ids
+  end
+
   def save
     recipe = Recipe.create(title: title, category_id: category_id, images: images,description: description, content: content,user_id: user_id, nutrient_ids: nutrient_ids, tag_ids: tag_ids)
     Ingredient.create(material: material, quantity: quantity, recipe_id: recipe.id)
@@ -14,16 +26,6 @@ class RecipeIngredient
     end
   end
 
-  # バリデーション
-  with_options presence: true do
-    validates :title
-    validates :description
-    validates :category_id
-    validates :images
-    validates :material
-    validates :quantity
-    validates :content
-    validates :nutrient_ids
-  end
+
 
 end
