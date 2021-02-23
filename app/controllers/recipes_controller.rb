@@ -23,6 +23,7 @@ class RecipesController < ApplicationController
     tag_list = params[:recipe_ingredient][:tag_name].split(',')
     @recipe.find_or_create_tags(tag_list)
     @recipe.save
+    binding.pry
     redirect_to root_path
   end
 

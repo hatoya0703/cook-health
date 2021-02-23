@@ -13,4 +13,17 @@ class RecipeIngredient
       self.tag_ids << post_recipe_tag.id
     end
   end
+
+  # バリデーション
+  with_options presence: true do
+    validates :title
+    validates :description
+    validates :category_id
+    validates :images
+    validates :material
+    validates :quantity
+    validates :content
+    validates :nutrient_ids
+  end
+
 end
