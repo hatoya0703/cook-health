@@ -1,4 +1,41 @@
-# README
+# Name（リポジトリ/プロジェクト/OSSなどの名前）
+CookHealth
+
+# DEMO
+
+# Deployment
+Preparing to deploy …
+
+# Features
+This application is my portfolio. 
+
+You can post and view recipes. 
+The recipe clearly states the nutrition you can get, so you can be healthy. 
+
+# Main technologies used
+* Ruby
+* Ruby on Rails
+* JavaScript(JQuery)
+* Git(only CLI)
+* AWS
+
+# Git Hub URL
+https://github.com/hatoya0703/cook-health
+
+# Main function
+
+* post your recipe
+* complex recipe search(keys : title, tags, nutrient, category)
+* add recipe to your favorites
+* post comment to recipe
+
+# Note
+
+Appearance and some features are currently being implemented , sorry.
+
+# Author
+
+* Hayato Fukishima
 
 # model&table design
 
