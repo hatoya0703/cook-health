@@ -4,14 +4,19 @@ class RecipeIngredient
   
   # バリデーション
   with_options presence: true do
-    validates :title
-    validates :description
+
+    validates :title, length: { maximum: 20 }
     validates :category_id
     validates :images
     validates :material
     validates :quantity
-    validates :content
     validates :nutrient_ids
+
+    with_options length: { maximum: 1000 } do
+      validates :description
+      validates :content
+    end
+    
   end
 
   def save
