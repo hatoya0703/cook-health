@@ -14,7 +14,7 @@
     <%= f.text_area :content, placeholder: "レシピの説明" %>
     <br>
     <%= f.label "レシピのカテゴリー" %>
-    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {}) %>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, prompt: "カテゴリーを選択してください") %>
     <%= f.label "完成イメージ" %>
     <%= f.file_field :images, name:"recipe_ingredient[images][]", id: "recipe_images" %>
     <br>
