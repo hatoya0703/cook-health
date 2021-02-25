@@ -16,6 +16,6 @@ class User < ApplicationRecord
       validates :nickname
       validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
     end
-    validates :password, length: { minimum: 6, maximum: 20 }, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,100}+\z/i }
+    validates :password, length: { minimum: 6, maximum: 20 }, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i}
   end
 end

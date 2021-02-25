@@ -76,4 +76,5 @@ gem 'mini_magick'
 gem 'jquery-ui-rails'
 gem 'ransack'
 gem 'kaminari'
-gem "aws-sdk-s3", require: false
+gem 'aws-sdk-s3', require: false
+gem 'rails-i18n'
