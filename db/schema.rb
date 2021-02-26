@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2021_02_26_080922) do
     t.text "nutrient_content", null: false, comment: "栄養の説明"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "nutrient_comment", null: false
+    t.string "nutrient_comment", null: false
   end
 
   create_table "recipe_nutrients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
