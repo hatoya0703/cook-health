@@ -33,7 +33,7 @@
                     <% end %>
                     <br>
                     <br>
-                      <%= r.content %>
+                      <%= r.content.truncate(100) %>
                   </div>
                   <%= image_tag r.images[0], class: "recipe-image-content" if r.images.attached? %>
                 </div>
