@@ -12,7 +12,9 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    @comment = current_user.comments.new
+    if user_signed_in?
+      @comment = current_user.comments.new
+    end
     @comments = @recipe.comments.order(id: "DESC")
     favorites = Favorite.where(user_id: current_user.id).order(created_at: :DESC).pluck(:recipe_id)
     @favorite_recipes = Recipe.find(favorites)
