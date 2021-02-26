@@ -1,0 +1,20 @@
+<div class ="main-content">
+  <div class="left-content">
+  <%= render "shared/complex_search" %>
+  </div>
+  <div class="center-content">
+    <%= form_with model:@nutrient, url: nutrients_path, class: "nutrient-post-form" do |n| %>
+      <%= n.label "栄養の名前" %>
+      <%= n.text_field :nutrient_name %>
+      <%= n.label "一言コメント" %>
+      <%= n.text_field :nutrient_comment %>
+      <%= n.label "説明" %>
+      <%= n.text_area :nutrient_content %>
+      <%= n.label "イメージ画像" %>
+      <%= n.file_field :image %>  
+    <% end %>
+  </div>
+</div>
+</div>
+<%= render "shared/footer" %>
+
