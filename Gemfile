@@ -32,9 +32,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'bullet'
-  gem 'rspec-rails'
-  gem 'faker'
-  gem 'factory_bot_rails'
   gem 'capistrano'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
@@ -57,6 +54,9 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'rspec-rails'
+  gem 'faker'
+  gem 'factory_bot_rails'
 end
 
 group :production do
@@ -76,4 +76,5 @@ gem 'mini_magick'
 gem 'jquery-ui-rails'
 gem 'ransack'
 gem 'kaminari'
-gem "aws-sdk-s3", require: false
+gem 'aws-sdk-s3', require: false
+gem 'rails-i18n'
