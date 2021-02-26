@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   end
   resources :users, only: :show
   resources :comments, only: [:create, :destroy]
-  resources :nutrients, only: :show
+  resources :nutrients, only: [:new, :show]
 end
