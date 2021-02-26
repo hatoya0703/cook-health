@@ -1,10 +1,67 @@
-# Name（リポジトリ/プロジェクト/OSSなどの名前）
+# README(日本語ver.)
+
+# アプリケーション名
+
+CookHealth
+
+# デモ画面
+
+# デプロイURL
+- URL:http://18.177.11.155
+-  AWSにてデプロイしました。
+
+# アプリの趣旨
+このアプリケーションは私のポートフォリオです。
+
+レシピを投稿したり閲覧することができます。
+レシピには摂取できる栄養が明示してあるので、健康になることができます。
+
+# Main technologies used
+* Ruby
+* Ruby on Rails
+* JavaScript(JQuery)
+* Git(GUIは使用しておりません)
+* AWS
+
+# Git Hub URL
+https://github.com/hatoya0703/cook-health
+
+# テストユーザー
+
+### テストユーザー１
+- nickname: テスト１
+- email: test1@gmail.com
+- password: qwer1234
+
+
+# 主な機能
+
+* レシピ投稿機能
+* 複雑な検索機能(検索キー : レシピ名,タグ,栄養,カテゴリー)
+* レシピお気に入り登録機能
+* コメント投稿機能
+
+# 注意書
+
+CSSによる見た目の調整一部機能は現在も実装中です。
+
+### 実装中機能
+- レシピの作り方を段階的登録できる機能（手順１=>手順２=>…）
+- レシピの材料と分量のカラムをもつ、新たなテーブルを作成予定
+- 外観のアップデート
+
+# ~ README English ver.
+
+
+# Name
+
 CookHealth
 
 # DEMO
 
 # Deployment
-Preparing to deploy …
+- URL:http://18.177.11.155
+- Deployed by AWS
 
 # Features
 This application is my portfolio. 
@@ -13,133 +70,34 @@ You can post and view recipes.
 The recipe clearly states the nutrition you can get, so you can be healthy. 
 
 # Main technologies used
-* Ruby
-* Ruby on Rails
-* JavaScript(JQuery)
-* Git(only CLI)
-* AWS
+- Ruby
+- Ruby on Rails
+- JavaScript(JQuery)
+- Git(only CLI)
+- AWS
 
 # Git Hub URL
 https://github.com/hatoya0703/cook-health
 
 # Main function
 
-* post your recipe
-* complex recipe search(keys : title, tags, nutrient, category)
-* add recipe to your favorites
-* post comment to recipe
+- post your recipe
+- complex recipe search(keys : title, tags, nutrient, category)
+- add recipe to your favorites
+- post comment to recipe
+
+# test user
+
+### test user 1
+- nickname: テスト１
+- email: test1@gmail.com
+- password: qwer1234
 
 # Note
 
 Appearance and some features are currently being implemented , sorry.
 
-# Author
-
-* Hayato Fukishima
-
-# model&table design
-
-## users table
-| Column             | Type    | Options                 |
-| ------------------ | ------- | ----------------------- |
-| nickname           | string  | null: false             |
-| email              | string  | null: false unique:true |
-| encrypted_password | string  | null: false             |
-
-## user model association
-- has_many :recipes
-- has_many :comments
-- has_many :comment_recipes, through: :comments, source: :recipe
-- has_many :favorites
-- has_many :favorite_recipes, through: :favorites, source: :recipe
-
-## recipes table(レシピ)
-| Column      | Type       | Options                       |
-| ----------- | ---------- | ----------------------------- |
-| title       | string     | null: false                   |
-| category_id | integer    | null: false                   |
-| description | text       | null: false                   |
-| content     | text       | null: false                   |
-| user        | references | null: false foreign_key: true |
-
-## recipe model association
-- belongs_to :user
-- has_many :ingredients
-- has_many :comments
-- has_many :users, through: :comments
-- has_many :favorites
-- has_many :favorite_users, :through: favorites, source: :user
-- has_many :recipe_tags
-- has_many :tags, through: :recipe_tags
-- has_many :recipe_nutrients
-- has_many :nutrients, through: :recipe_nutrients
-
-## ingredients table（レシピの材料）
-| Column   | Type       | Options                       |
-| -------- | ---------- | ----------------------------- |
-| material | string     | null: false                   |
-| quantity | string     | null: false                   |
-| recipe   | references | null: false foreign_key: true |
-
-## ingredient model association
-- belongs_to :recipe
-
-## comments table
-| Column          | Type       | Options                       |
-| --------------- | ---------- | ----------------------------- |
-| comment_content | text       | null: false                   |
-| user            | references | null: false foreign_key: true |
-| recipe          | references | null: false foreign_key: true |
-
-## comment model association
-- belongs_to :user
-- belongs_to :recipe
-
-## favorites table
-| Column | Type       | Options                       |
-| ------ | ---------- | ----------------------------- |
-| user   | references | null: false foreign_key: true |
-| recipe | references | null: false foreign_key: true |
-
-## favorite model association
-- belongs_to :user
-- belongs_to :recipe
-
-## nutrients table
-| Column           | Type   | Options     |
-| ---------------- | ------ | ----------- |
-| nutrient_name    | string | null: false |
-| nutrient_content | text   | null: false |
-
-## nutrient model association
-- has_many :recipe_nutrients
-- has_many :recipes through: :recipe_nutrients
-
-## recipe_nutrients table
-| Column   | Type      | Options                       |
-| -------- | --------- | ----------------------------- |
-| recipe   | reference | null: false foreign_key: true |
-| nutrient | reference | null: false foreign_key: true |
-
-## recipe nutrient model association
-- belongs_to: recipe
-- belongs_to: nutrient
-
-## tags table association
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| tag_name | string | null: false |
-
-## tag table association
-- has_many: recipe_tag
-- has_many: recipes belongs_to :recipe_tag
-
-## recipe_tags table
-| Column  | Type      | Options                       |
-| ------- | --------- | ----------------------------- |
-| recipe  | reference | null: false foreign_key: true |
-| tag     | reference | null: false foreign_key: true |
-
-## recipe tag model association
-- belongs_to: recipe
-- belongs_to: tag
+## Features being implemented
+- A function that allows you to register how to make recipes step by step
+- I plan to create a new table with recipe ingredients and quantities in columns
+- Appearance update
