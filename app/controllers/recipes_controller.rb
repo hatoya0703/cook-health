@@ -8,6 +8,7 @@ class RecipesController < ApplicationController
 
   def index
     @result = @r.result
+    gon.nutrient_all = Nutrient.all
   end
 
   def show
