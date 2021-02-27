@@ -17,6 +17,7 @@ require("../preview")
 require("../tag")
 require("../scroll")
 require("../comment")
+require("../nutrient_comment")
 
 
 
