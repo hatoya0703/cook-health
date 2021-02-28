@@ -3,6 +3,16 @@
 	background: #ffffff;
 	border: 1px solid #809c9b;
 }
+.arrow_box:after, .arrow_box:before {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
 // 〜〜〜〜左側のコンテンツ〜〜〜〜
 
 .left-content {
