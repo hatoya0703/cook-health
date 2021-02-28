@@ -8,6 +8,8 @@ class RecipesController < ApplicationController
 
   def index
     @result = @r.result
+    #nutrient_comment.js にて栄養コメントを表示するため、変数に値を格納
+    gon.nutrient_all = Nutrient.all
   end
 
   def show
