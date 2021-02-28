@@ -22,48 +22,6 @@ li{
 
 // 〜〜〜〜ページ全体〜〜〜〜
 
-
-// 〜〜〜〜左側のコンテンツ〜〜〜〜
-
-.left-content {
-  box-sizing: border-box;
-  min-height: 92vh;
-  width: 25vw;
-  padding: 3vh 3vh 0 3vh;
-  background-color: #cefff1;
-  *{
-    font-family: $font_pop;
-  }
-}
-
-.complex-search{
-  .recipe_search{
-    display: block;
-    label{
-      display: block;
-      &.item{
-        margin-top: 5vh;
-      }
-    }
-    input{
-      &[name="commit"]{
-        display: block;
-      }
-    }
-  }
-}
-
-#q_title_cont{
-  margin-bottom: 5vh;
-}
-
-select{
-  margin-bottom: 5vh;
-}
-
-// 〜〜〜〜左側のコンテンツ〜〜〜〜
-
-
 // 〜〜〜〜中央のコンテンツ〜〜〜〜
 .recipe-list{
   text-decoration: none;
