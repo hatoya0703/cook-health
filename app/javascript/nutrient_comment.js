@@ -5,7 +5,7 @@ $(document).on("turbolinks:load",function(){
     function(e){
     
     const nutrientId = this.firstChild.value  //ホバーした栄養のcheckboxのvalueの値を格納
-    const nutrientLink = `nutrients/${nutrientId}`  //発火元のnutrients#showのリンクを変数に格納
+    const nutrientLink = `/nutrients/${nutrientId}`  //発火元のnutrients#showのリンクを変数に格納
     const nutrientComment = gon.nutrient_all[nutrientId - 1].nutrient_comment  //配列gon.nutrient_allの[value - 1]番目のコメントを取得(gon.nutrient_allにはコントローラーの処理でNutrient.allが格納されている。)
     $(this).append("<div>");  //コメント挿入するためのdiv要素を生成
     $(this.lastChild).addClass("arrow_box");  //生成したdiv要素にクラス名arrow_boxを付与
