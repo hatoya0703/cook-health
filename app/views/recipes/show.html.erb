@@ -21,7 +21,9 @@
     </div>
     <br>
     <%= image_tag @recipe.images[0], class: "recipe-image-content" if @recipe.images.attached? %>
-    <%= link_to "削除する", recipe_path(params[:id]), method: :delete %>
+    <% if user_signed_in? && current_user.id == @recipe.user_id %>
+      <%= link_to "削除する", recipe_path(params[:id]), method: :delete %>
+    <% end %>
     <br>
     <br>
     <p>＝＝＝コメント＝＝＝</p>
