@@ -9,9 +9,11 @@
         <%= f.submit ("検索する") %>
       <% end %>
     </div>
-    <div class="recipe-post-btn">
-      <%= link_to "レシピを投稿する", new_recipe_path, data:{"turbolinks" => false} %>
-    </div>    
+    <% if user_signed_in? %>
+      <div class="recipe-post-btn">
+        <%= link_to "レシピを投稿する", new_recipe_path, data:{"turbolinks" => false} %>
+      </div>
+    <% end %>
     <%# ログイン/ログアウト機能,ユーザーメニュー実装予定 %>
     <ul class="user-session">
       <% if user_signed_in? %>

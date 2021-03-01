@@ -4,7 +4,12 @@ class RecipesController < ApplicationController
   before_action :nutrient_set, only: [:new, :index, :show]
   
   def new
-    @recipe = RecipeIngredient.new
+    if user_signed_in?
+      @recipe = RecipeIngredient.new
+    else
+      redirect_to root_path
+    end
+    
   end
 
   def index
@@ -20,16 +25,19 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = RecipeIngredient.new(recipe_params)
-    tag_list = params[:recipe_ingredient][:tag_name].split(',')
-    @recipe.find_or_create_tags(tag_list)
-    if @recipe.valid?
-      @recipe.save
-      redirect_to root_path
+    if user_signed_in?
+      @recipe = RecipeIngredient.new(recipe_params)
+      tag_list = params[:recipe_ingredient][:tag_name].split(',')
+      @recipe.find_or_create_tags(tag_list)
+      if @recipe.valid?
+        @recipe.save
+        redirect_to root_path
+      else
+        render :new
+      end
     else
-      render :new
+      redirect_to root_path
     end
-    
   end
 
   def destroy
