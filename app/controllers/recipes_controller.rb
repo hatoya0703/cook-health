@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   
-  before_action :search_recipe
+  before_action :search_recipe, only: [:index]
+  before_action :nutrient_set, only: [:new, :index, :show]
   
   def new
     @recipe = RecipeIngredient.new
@@ -8,8 +9,6 @@ class RecipesController < ApplicationController
 
   def index
     @result = @r.result
-    #nutrient_comment.js にて栄養コメントを表示するため、変数に値を格納
-    gon.nutrient_all = Nutrient.all
   end
 
   def show
@@ -52,6 +51,11 @@ class RecipesController < ApplicationController
 
   def search_recipe
     @r = Recipe.ransack(params[:q])
+  end
+
+  def nutrient_set
+    #nutrient_comment.js にて栄養コメントを表示するため、変数に値を格納
+    gon.nutrient_all = Nutrient.all
   end
 
 end
