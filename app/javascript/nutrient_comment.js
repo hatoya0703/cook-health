@@ -15,15 +15,15 @@ $(document).on("turbolinks:load",function(){
     $(this).find("a").attr("href",nutrientLink );  //生成したa要素に変数を用いてリンクを設定
     $(this).find("a").text("栄養の詳細情報を見る");  //a要素テキストを挿入
 
-    //吹き出しを表示させる座標を決めるため、イベント発火時の座標を取得
-    const mouseX = e.clientX
-    const mouseY = e.clientY
+    //吹き出しを表示させる座標を決めるため、イベント発火時の座標を取得(スクロールにより表示座標がずれるためコメントアウト)
+    //const mouseX = e.clientX
+    //const mouseY = e.clientY
+    //console.log(mouseX);
 
     //吹き出しのCSSを上書きして、吹き出しの表示座標を指定
     $(".arrow_box").css({
       "position": "absolute",
-      "left": mouseX,
-      "top": mouseY
+      "left": "6vw",
     });
 
   },function(){
