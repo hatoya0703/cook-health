@@ -1,0 +1,66 @@
+// 〜〜〜〜ページ全体〜〜〜〜
+
+$font_pop:'Chalkboard SE','PT Mono','Courier','Verdana','Hannotate TC','ヒラギノ角ゴシック','Hiragino Sans','ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+
+li{
+  list-style: none;
+}
+
+.main-content{
+  position: relative;
+  top: 8vh;
+  min-height: 92vh;
+  box-sizing: border-box;
+  display: flex;
+  padding-bottom: 10vh;
+  
+  p{
+    margin-bottom: 5vh;
+    text-align: center;
+  }
+}
+
+// 〜〜〜〜ページ全体〜〜〜〜
+
+// 〜〜〜〜中央のコンテンツ〜〜〜〜
+.recipe-list{
+  text-decoration: none;
+}
+
+.recipe-list-contents{
+  display: flex;
+}
+
+.recipe-text-contents{
+  box-sizing: border-box;
+  width: 30vw;
+}
+
+.recipe-image-content{
+  box-sizing: border-box;
+  width: 32vw;
+  
+  border-radius: 1rem;
+}
+
+.center-content {
+  height: 100%;
+  background-color: #ace7ef;
+  padding: 1rem;
+}
+
+.jscroll-inner{
+  li{
+    box-sizing: border-box;
+    padding: 1rem;
+    margin: 1rem;
+
+    background-color: white;
+  }
+}
+
+nav.pagination {
+  display: none;
+}
+
+// 〜〜〜〜中央のコンテンツ〜〜〜〜

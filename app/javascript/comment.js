@@ -1,4 +1,4 @@
-$(window).on("load",function(){
+$(document).on("turbolinks:load",function(){
   function buildHTML(comment){
     // コメント挿入用要素をセットするファンクションを定義しておく
     const html = `<div class="comment-content">${comment.comment_content}</div>`

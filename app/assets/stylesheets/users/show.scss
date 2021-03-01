@@ -1,0 +1,13 @@
+.user-contents{
+  position: relative;
+  top: 8vh;
+  box-sizing: border-box;
+  padding-bottom: 10vh;
+  padding: 2rem 2rem 5vh 2rem;
+  min-height: 92vh;
+  background-color: cadetblue;
+}
+
+.tab-content > li{
+  display: none;
+}

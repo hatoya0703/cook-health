@@ -9,7 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("jquery")
 require("jquery-ui")
-require("/Users/hayato/projects/cook-health/vendor/assets/javascripts/jquery.tagsinput.min.js")
+require("../jquery.tagsinput.min.js")
 require("../jquery.jscroll.min.js")
 require("../tab")
 require("../menu")
@@ -17,6 +17,7 @@ require("../preview")
 require("../tag")
 require("../scroll")
 require("../comment")
+require("../nutrient_comment")
 
 
 

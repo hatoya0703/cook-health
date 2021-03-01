@@ -1,23 +1,39 @@
 <div class="recipe-post-form">
   <%= form_with model: @recipe, url:recipes_path, local: true do |f| %>
+    <%= render "shared/error_message", model: f.object %>
     <div class="recipe-post-text">
       レシピを投稿する
     </div>
-    <div class= "post-content-text">
-      レシピ名
-    </div>
+    <%= f.label "レシピ名" %>
     <%= f.text_field :title, placeholder:"レシピ名" %>
+    <br>
+    <%= f.label "タグ" %>
+    <%= f.text_field :tag_name, id:"formTagInput", class:"form-control", placeholder:"タグを登録してください。複数つけるには','で区切ってください。" %>
+    <br>
+    <%= f.label "レシピの説明" %>
     <%= f.text_area :content, placeholder: "レシピの説明" %>
-    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {}) %>
+    <br>
+    <%= f.label "レシピのカテゴリー" %>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, prompt: "カテゴリーを選択してください") %>
+    <%= f.label "完成イメージ" %>
     <%= f.file_field :images, name:"recipe_ingredient[images][]", id: "recipe_images" %>
+    <br>
     <div id="image-preview"></div>
+    <%= f.label "材料名" %>
     <%= f.text_field :material, placeholder:"材料名"%>
+    <br>
+    <%= f.label "分量" %>
     <%= f.text_field :quantity, placeholder:"分量"%>
+    <br>
+    <%= f.label "作り方" %>
     <%= f.text_area :description, placeholder: "作り方" %>
+    <br>
+    <%= f.label "摂取できる栄養" %>
     <%= f.collection_check_boxes :nutrient_ids, Nutrient.all, :id, :nutrient_name do |n| %>
       <% n.label { n.check_box + n.text} %>
     <% end %>
-    <%= f.text_field :tag_name, id:"formTagInput", class:"form-control", placeholder:"タグを登録してください。複数つけるには','で区切ってください。" %>
+    <br>
     <%= f.submit "投稿する" %>
   <% end %>
 </div>
+<%= render "shared/footer" %>

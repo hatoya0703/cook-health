@@ -1,0 +1,50 @@
+.arrow_box {
+	position: relative;
+	background: #ffffff;
+	border: 1px solid #809c9b;
+}
+
+// 〜〜〜〜左側のコンテンツ〜〜〜〜
+
+.left-content {
+  box-sizing: border-box;
+  min-height: 92vh;
+  width: 25vw;
+  padding: 3vh 3vh 0 3vh;
+  background-color: #cefff1;
+}
+
+.complex-search{
+  .recipe_search{
+    display: block;
+    label{
+      display: block;
+      .arrow_box{
+        span{
+          //栄養コメントを開業させないよう
+          white-space: nowrap;
+        }
+        a{
+          //コメントとリンクを縦並びに配置するため
+          display:block
+        }
+      }
+
+    }
+    input{
+      &[name="commit"]{
+        display: block;
+      }
+    }
+  }
+}
+
+#q_title_cont{
+  margin-bottom: 5vh;
+}
+
+select{
+  margin-bottom: 5vh;
+}
+
+// 〜〜〜〜左側のコンテンツ〜〜〜〜
