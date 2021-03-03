@@ -1,9 +1,12 @@
-<div class="nutrient-name">
-  <%= @nutrient.nutrient_name %>
-</div>
-<div class="nutrient-image">
-  <%= image_tag @nutrient.image %>
-</div>
-<div classs="nitrient-content">
-  <%= @nutrient.nutrient_content %>
+<%= render "shared/complex_search" %>
+<div class="center-contents">
+  <div class="nutrient-name">
+    <%= @nutrient.nutrient_name %>
+  </div>
+  <div class="nutrient-image">
+    <%= image_tag @nutrient.image %>
+  </div>
+  <div classs="nitrient-content">
+    <%= @nutrient.nutrient_content %>
+  </div>
 </div>

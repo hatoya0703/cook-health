@@ -14,14 +14,9 @@
 
   <body>
     <%= render "shared/header" %>
-     <div class="main-content">
-        <div class="left-contents">
-          <%= render "shared/complex_search" %>
-        </div>
-        <div class="center-contents">
-          <%= yield %>
-        </div>
-      </div>
+     <div class="main-contents">
+       <%= yield %>
+     </div>
     <%= render "shared/footer" %>
   </body>
 </html>

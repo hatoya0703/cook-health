@@ -1,5 +1,5 @@
-<div class="header-all">
-  <div class="header-content">
+<div class="header-contents">
+  <div class="header-items">
     <div class="header-logo">
       <%= link_to("Cook Health", root_path, {class:"logo-text"}) %>
     </div>
@@ -24,19 +24,16 @@
         <li><%= link_to "新規登録", new_user_registration_path %></li>
       <% end %>
     </ul>
-
   </div>
-
-      <div class="menu">
-    <!-- アコーディオンここから -->
-      <a href="#" class="btn">Menu</a>
-      <div class="inner">
-        <ul class="nav">
-        <% if user_signed_in? %>
-          <li><%= link_to "マイページ", user_path(current_user.id), data:{"turbolinks" => false} %></li>
-        <% end %>
-          <li><%= link_to "ヘルプ", "" %></li>
-        </ul>
-      </div>
-    </div> 
+  <div class="menu">
+    <a href="#" class="btn">Menu</a>
+    <div class="inner">
+      <ul class="nav">
+      <% if user_signed_in? %>
+        <li><%= link_to "マイページ", user_path(current_user.id), data:{"turbolinks" => false} %></li>
+      <% end %>
+        <li><%= link_to "ヘルプ", "" %></li>
+      </ul>
+    </div>
+  </div> 
 </div>

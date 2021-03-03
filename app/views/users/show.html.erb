@@ -1,31 +1,34 @@
-<div class="user-contents">
-  <div class="user-info">
-    <div class="user-image">
+<%= render "shared/complex_search" %>
+<div class="center-contents">
+  <div class="user-contents">
+    <div class="user-info">
+      <div class="user-image">
+      </div>
+      <div class="user-name">
+      </div>
     </div>
-    <div class="user-name">
-    </div>
-  </div>
-  <div class="user-recipe-contents">
-    <ul class="tab-lists">
-      <li class="my-recipes"><a href="#">マイレシピ</a></li>
-      <li class="favorite-recipes">
-        <a href="#">お気に入りレシピ
-          <% if @favorite_recipes.present? %>
-            <% @favorite_recipes.each do |recipe| %>
-              <%= recipe.title %>
-              <%= recipe.user.content %>
+    <div class="user-recipe-contents">
+      <ul class="tab-lists">
+        <li class="my-recipes"><a href="#">マイレシピ</a></li>
+        <li class="favorite-recipes">
+          <a href="#">お気に入りレシピ
+            <% if @favorite_recipes.present? %>
+              <% @favorite_recipes.each do |recipe| %>
+                <%= recipe.title %>
+                <%= recipe.user.content %>
+              <% end %>
             <% end %>
-          <% end %>
-        </a>
-      </li>
-    </ul>
-    <ul class="tab-contents">
-      <li class="my-recipes">
-        テスト１
-      </li>
-      <li class="favorite-recipes">
-        テスト２
-      </li>
-    </ul>
+          </a>
+        </li>
+      </ul>
+      <ul class="tab-contents">
+        <li class="my-recipes">
+          テスト１
+        </li>
+        <li class="favorite-recipes">
+          テスト２
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
