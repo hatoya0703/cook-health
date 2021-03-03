@@ -7,6 +7,7 @@ a{
 .header-contents{
   z-index: 2;
   position: fixed;
+  box-sizing: border-box;
   height: 8vh;
   width: 100vw;
   background-color:#6ef3d6;
