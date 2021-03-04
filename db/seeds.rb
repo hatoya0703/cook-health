@@ -8,8 +8,8 @@
 
 
 User.create(
-  nickname: "管理者",
-  email: "admin@gmail.com",
+  nickname: "管理者1",
+  email: "admin1@gmail.com",
   password: "qwer1234",
   password_confirmation: "qwer1234",
   admin: true
