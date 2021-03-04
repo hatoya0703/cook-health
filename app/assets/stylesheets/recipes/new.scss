@@ -4,15 +4,13 @@
   min-height: 92vh;
   box-sizing: border-box;
   padding: 2rem 2rem 10vh 15rem;
-  
   .recipe-post-text{
     text-align: center;
   }
   form{
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
     width: 50vw;
-
     #image-preview{
       display: flex;
       div{
@@ -22,9 +20,7 @@
         }
       }
     }
-
     input[name="commit"]{
-      
       width: 5rem;
     }
   }

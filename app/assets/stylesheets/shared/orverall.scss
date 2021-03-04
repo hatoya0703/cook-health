@@ -1,0 +1,15 @@
+$font_pop:'Chalkboard SE','PT Mono','Courier','Verdana','Hannotate TC','ヒラギノ角ゴシック','Hiragino Sans','ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+
+// 全体のフォントを指定
+*{
+  font-family: $font_pop;
+}
+
+// ページ全体の背景色を指定
+body{
+  background-color:#6ef3d6;
+}
+
+li{
+  list-style: none;
+}

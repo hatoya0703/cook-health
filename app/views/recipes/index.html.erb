@@ -1,50 +1,43 @@
-<div class ="main-content">
-  <div class="left-content">
-  <%= render "shared/complex_search" %>
+<%= render "shared/complex_search" %>
+<div class="center-contents">
+  <div class="posted-recipes-title">
+    投稿レシピ一覧
   </div>
-  <div class="center-content">
-    <div class="highright-recipes-title">
-      人気レシピ一覧
-    </div>
-    <div class="highlight-recipes-content">
-      <ul class="recipe-lists jscroll">
-        <% @search_recipes.each do |r| %>
-          <li>
-            <div class="lists">
-              <%# list要素をリンク化%>
-              <%= link_to recipe_path(r.id),class: "recipe-list" do %>
-                <div class="recipe-list-contents">
-                  <div class="recipe-text-contents">
-                    <h3 class="recipe-title">
-                      <%= r.title %>
-                    </h3>
-                    <br>
-                    登録タグ
-                    <br>
-                    <% r.tags.each do |t| %>
-                      <%= t.tag_name %>
-                    <% end %>
-                    <br>
-                    <br>
-                    栄養素
-                    <br>
-                    <% r.nutrients.each do |n| %>
-                      <%= n.nutrient_name %>
-                    <% end %>
-                    <br>
-                    <br>
-                      <%= r.content.truncate(100) %>
-                  </div>
-                  <%= image_tag r.images[0], class: "recipe-image-content" if r.images.attached? %>
-                </div>
-              <% end %>
+  <div class="posted-recipes-contents">
+    <ul class="recipe-lists jscroll">
+      <% @search_recipes.each do |r| %>
+        <li>
+          <%# list要素をリンク化%>
+          <%= link_to recipe_path(r.id),class: "recipe-list" do %>
+            <div class="recipe-list-contents">
+              <div class="recipe-text-contents">
+                <h3 class="recipe-title">
+                  <%= r.title %>
+                </h3>
+                <br>
+                登録タグ
+                <br>
+                <% r.tags.each do |t| %>
+                  <%= t.tag_name %>
+                <% end %>
+                <br>
+                <br>
+                栄養素
+                <br>
+                <% r.nutrients.each do |n| %>
+                  <%= n.nutrient_name %>
+                <% end %>
+                <br>
+                <br>
+                  <%= r.content.truncate(100) %>
+              </div>
+              <%= image_tag r.images[0], class: "recipe-image-content" if r.images.attached? %>
             </div>
-            <%# /list要素をリンク化%>
-          </li>
-        <% end %>
-        <%= paginate @search_recipes %>
-      </ul>
-    </div>
-    
+          <% end %>
+          <%# /list要素をリンク化%>
+        </li>
+      <% end %>
+      <%= paginate @search_recipes %>
+    </ul>
   </div>
 </div>

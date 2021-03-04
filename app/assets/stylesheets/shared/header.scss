@@ -4,16 +4,17 @@ a{
   text-decoration: none;
 }
 
-.header-all{
+.header-contents{
   z-index: 2;
   position: fixed;
+  box-sizing: border-box;
   height: 8vh;
   width: 100vw;
   background-color:#6ef3d6;
   display: flex;
 }
 
-.header-content{
+.header-items{
   display: flex;
   align-items: center;
   height: 100%;
