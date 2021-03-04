@@ -1,18 +1,39 @@
-.recipe-show{
-  position: relative;
-  top: 8vh;
-  box-sizing: border-box;
-  padding-bottom: 5vh;
-  padding: 2rem 2rem 5vh 2rem;
-  min-height: 100vh;
+.recipe-show-contents{
   display: flex;
-  .recipe-show-contents{
-    min-height: 100vh;
+  flex-flow: column;
+  padding-left: 5rem;
+  .recipe-show-items{
     display: flex;
     flex-flow: column;
-     padding-left: 5rem;
-    .recipe-text-contents{
-      
+
+    .recipe-title-contents{
+      display: flex;
+      .recipe-title{
+  
+      }
+      .star-btn{
+  
+      }
+      .recipe-user{
+  
+      }
     }
+    .recipe-image-content{
+      width: 45vw;
+      height: 50vh;
+    }
+    .recipe-text-contents{
+      display: flex;
+      flex-flow: column;
+  }
+  .recipe-show-items{
+
+    }
+  }
+  .posted-comment{
+
+  }
+  .comment-contents{
+
   }
 }

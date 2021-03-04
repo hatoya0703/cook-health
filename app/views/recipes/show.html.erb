@@ -1,26 +1,30 @@
   <%= render "shared/complex_search" %>
   <div class="center-contents">
     <div class="recipe-show-contents">
-      <div class="recipe-text-contents">
-        <h3 class="recipe-title">
-          <%= @recipe.title %>
-        </h3>
-        <br>
-        <div class='star-btn' id="favorite_<%= @recipe.id %>">
-          <%= render "favorites/favorite", recipe: @recipe %>
+      <div class="recipe-show-items">
+        <div class="recipe-title-contents">
+          <h3 class="recipe-title">
+            <%= @recipe.title %>
+          </h3>
+          <br>
+          <div class='star-btn' id="favorite_<%= @recipe.id %>">
+            <%= render "favorites/favorite", recipe: @recipe %>
+          </div>
+          <br>
+          <span class="recipe-user">
+            <%= @recipe.user.nickname %>
+          </span>
+          <br>
+          <br>
         </div>
-        <br>
-        <span class="recipe-user">
-          <%= @recipe.user.nickname %>
-        </span>
-        <br>
-        <br>
-        <p>
-          <%= @recipe.content %>
-        </p>
+        <%= image_tag @recipe.images[0], class: "recipe-image-content" if @recipe.images.attached? %>
+        <div class="recipe-text-contents">
+          <p>
+            <%= @recipe.content %>
+          </p>
+        </div>
       </div>
       <br>
-      <%= image_tag @recipe.images[0], class: "recipe-image-content" if @recipe.images.attached? %>
       <% if user_signed_in? && current_user.id == @recipe.user_id %>
         <%= link_to "削除する", recipe_path(params[:id]), method: :delete %>
       <% end %>
@@ -36,7 +40,7 @@
       <% end %>
       <div class="posted-comment"></div>
       <% @comments.each do |comment| %>
-        <div class="comment-content"><%= comment.comment_content %></div>
+        <div class="comment-contents"><%= comment.comment_content %></div>
       <% end %>
     </div>
   </div>
