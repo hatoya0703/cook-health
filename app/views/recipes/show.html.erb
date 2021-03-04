@@ -30,17 +30,18 @@
       <% end %>
       <br>
       <br>
-      <p>＝＝＝コメント＝＝＝</p>
-      <% if user_signed_in? %>
-        <%= form_with(model: [@recipe,@comment], url: comments_path, method: :post, id: "comment-form")  do |c| %>
-          <%= c.text_area :comment_content %>
-          <%= c.hidden_field :recipe_id, value: @recipe.id %>
-          <%= c.submit "コメントする", id: "comment-submit" %>
+      <div class="posted-comment">
+        <p>＝＝＝コメント＝＝＝</p>
+        <% if user_signed_in? %>
+          <%= form_with(model: [@recipe,@comment], url: comments_path, method: :post, id: "comment-form")  do |c| %>
+            <%= c.text_area :comment_content %>
+            <%= c.hidden_field :recipe_id, value: @recipe.id %>
+            <%= c.submit "コメントする", id: "comment-submit" %>
+          <% end %>
         <% end %>
-      <% end %>
-      <div class="posted-comment"></div>
-      <% @comments.each do |comment| %>
-        <div class="comment-contents"><%= comment.comment_content %></div>
-      <% end %>
+        <% @comments.each do |comment| %>
+          <div class="comment-contents"><%= comment.comment_content %></div>
+        <% end %>
+      </div>
     </div>
   </div>

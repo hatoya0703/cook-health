@@ -1,10 +1,10 @@
 .recipe-show-contents{
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   padding-left: 5rem;
   .recipe-show-items{
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
 
     .recipe-title-contents{
       display: flex;
@@ -24,14 +24,19 @@
     }
     .recipe-text-contents{
       display: flex;
-      flex-flow: column;
+      flex-direction: column;
   }
   .recipe-show-items{
 
     }
   }
   .posted-comment{
-
+    display: flex;
+    flex-direction: column;
+    p{
+      align-items: center;
+      justify-content: center;
+    }
   }
   .comment-contents{
 
