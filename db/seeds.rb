@@ -28,7 +28,8 @@ end
   Nutrient.create(
     nutrient_name: "栄養#{n+1}",
     nutrient_comment: "これはテスト栄養のコメントです",
-    nutrient_content: "これはテスト栄養のコメントです"
+    nutrient_content: "これはテスト栄養のコメントです",
+    nutrient_category_id: rand(1..5)
     )
   Nutrient.find(n+1).image.attach(io: File.open('public/test_img/test.jpeg'), filename: 'test.jpeg')
 end
