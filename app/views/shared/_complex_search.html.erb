@@ -5,10 +5,25 @@
       <%= f.text_field :title_cont, placeholder: "レシピ名" %>
       <%= f.label :category_id_eq, "カテゴリ"%>
       <%= f.collection_select :category_id_eq, Category.all, :id, :name, include_blank: "指定なし" %>
-      <br>
-      栄養
-      <br>
-      <%= f.collection_check_boxes :nutrients_id_eq_any, Nutrient.all, :id, :nutrient_name do |n| %>
+      <br>栄養<br>
+      <br>炭水化物<br>
+      <%= f.collection_check_boxes :nutrients_id_eq_any, Nutrient.where(nutrient_category_id: 1 ), :id, :nutrient_name do |n| %>
+        <% n.label { n.check_box + n.text } %>
+      <% end %>
+      <br>脂質<br>
+      <%= f.collection_check_boxes :nutrients_id_eq_any, Nutrient.where(nutrient_category_id: 2 ), :id, :nutrient_name do |n| %>
+        <% n.label { n.check_box + n.text } %>
+      <% end %>
+      <br>たんぱく質<br>
+      <%= f.collection_check_boxes :nutrients_id_eq_any, Nutrient.where(nutrient_category_id: 3 ), :id, :nutrient_name do |n| %>
+        <% n.label { n.check_box + n.text } %>
+      <% end %>
+      <br>ミネラル<br>
+      <%= f.collection_check_boxes :nutrients_id_eq_any, Nutrient.where(nutrient_category_id: 4 ), :id, :nutrient_name do |n| %>
+        <% n.label { n.check_box + n.text } %>
+      <% end %>
+      <br>ビタミン<br>
+      <%= f.collection_check_boxes :nutrients_id_eq_any, Nutrient.where(nutrient_category_id: 5 ), :id, :nutrient_name do |n| %>
         <% n.label { n.check_box + n.text } %>
       <% end %>
       <%= f.label :category_id_eq, "表示順", class:"item" %>
