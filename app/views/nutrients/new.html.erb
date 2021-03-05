@@ -9,7 +9,7 @@
     <%= n.text_area :nutrient_content %>
     <%= n.label "イメージ画像" %>
     <%= n.file_field :image %>
-    <%= n.submit %>
+    <%= n.submit "登録する" %>
     <%= n.collection_select(:nutrient_category_id, NutrientCategory.all, :id, :category_name, prompt: "カテゴリーを選択してください") %>
   <% end %>
 </div>

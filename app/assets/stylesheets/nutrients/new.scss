@@ -1,8 +1,8 @@
-.main-content{
-  .center-content{
-    .nutrient-post-form{
-      display: flex;
-      flex-direction: column;
-    }
+.nutrient-post-form{
+  display: flex;
+  flex-direction: column;
+  textarea{
+    resize: none;
+    height: 50vh;
   }
 }
