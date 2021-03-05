@@ -4,4 +4,8 @@ class Nutrient < ApplicationRecord
   has_many :recipes, through: :recipe_nutrients
 
   has_one_attached :image, dependent: :destroy
+
+  # ActiveHashのアソシエーション
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :nutrient_category
 end

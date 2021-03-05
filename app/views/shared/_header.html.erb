@@ -14,7 +14,6 @@
         <%= link_to "レシピを投稿する", new_recipe_path, data:{"turbolinks" => false} %>
       </div>
     <% end %>
-    <%# ログイン/ログアウト機能,ユーザーメニュー実装予定 %>
     <ul class="user-session">
       <% if user_signed_in? %>
         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
@@ -24,6 +23,11 @@
         <li><%= link_to "新規登録", new_user_registration_path %></li>
       <% end %>
     </ul>
+    <% if current_user.admin? %>
+      <div class="nutrient-post-btn">
+        <%= link_to "栄養を投稿", new_nutrient_path, data:{"turbolinks" => false} %>
+      </div>
+    <% end %>
   </div>
   <div class="menu">
     <a href="#" class="btn">Menu</a>
