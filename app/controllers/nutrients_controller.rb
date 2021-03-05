@@ -18,7 +18,7 @@ class NutrientsController < ApplicationController
 
 private
   def nutrient_params
-    params.require(:nutrient).permit(:nutrient_name, :nutrient_content, :nutrient_comment, :image)
+    params.require(:nutrient).permit(:nutrient_name, :nutrient_content, :nutrient_comment, :image, :nutrient_category_id)
   end
 
     def nutrient_set
