@@ -21,12 +21,17 @@
         <li><%= link_to "ログイン", new_user_session_path %></li>
         /
         <li><%= link_to "新規登録", new_user_registration_path %></li>
+        /
+        <li><%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post %></li>
       <% end %>
     </ul>
     <% if user_signed_in? && current_user.admin? %>
       <div class="nutrient-post-btn">
         <%= link_to "栄養を投稿", new_nutrient_path, data:{"turbolinks" => false} %>
       </div>
+    <% end %>
+    <% if user_signed_in? %>
+      <%= link_to current_user.nickname, user_path(current_user.id),class: "user-name", data:{"turbolinks" => false} %>
     <% end %>
   </div>
   <div class="menu">
