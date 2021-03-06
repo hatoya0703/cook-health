@@ -17,14 +17,11 @@
       <ul class="tab-contents"> 
         <li class="my-recipes">
           自分のレシピを表示
+          <%= render "my_recipe", my_recipes: @my_recipes %>
         </li>
         <li class="favorite-recipes">
           お気に入りレシピを表示
           <%= render "favorite_recipe", favorite_recipes: @favorite_recipes %>
-          <% @favorite_recipes.each do |recipe| %>
-            <%= recipe.title %>
-            <%= recipe.content %>
-          <% end %>
         </li>
       </ul>
     </div>
