@@ -28,6 +28,9 @@
         <%= link_to "栄養を投稿", new_nutrient_path, data:{"turbolinks" => false} %>
       </div>
     <% end %>
+    <% if user_signed_in? %>
+      <%= link_to current_user.nickname, user_path(current_user.id),class: "user-name", data:{"turbolinks" => false} %>
+    <% end %>
   </div>
   <div class="menu">
     <a href="#" class="btn">Menu</a>
