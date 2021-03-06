@@ -1,4 +1,4 @@
-$(window).on('load', function(){
+$(document).on('turbolinks:load', function(){
 
   if($(".tab-lists").length){   //「tab-lists」classがあるとき条件分岐
     $(".tab-contents > li").css("display", "none");   //最初にすべてのcontent非表示
