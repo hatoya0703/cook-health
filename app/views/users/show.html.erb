@@ -15,7 +15,7 @@
             <% if @favorite_recipes.present? %>
               <% @favorite_recipes.each do |recipe| %>
                 <%= recipe.title %>
-                <%= recipe.user.content %>
+                <%= recipe.content %>
               <% end %>
             <% end %>
           </a>

@@ -11,25 +11,20 @@
           <%= link_to recipe_path(r.id),class: "recipe-list" do %>
             <div class="recipe-list-contents">
               <div class="recipe-text-contents">
-                <h3 class="recipe-title">
-                  <%= r.title %>
-                </h3>
-                <br>
-                登録タグ
-                <br>
-                <% r.tags.each do |t| %>
-                  <%= t.tag_name %>
-                <% end %>
-                <br>
-                <br>
-                栄養素
-                <br>
-                <% r.nutrients.each do |n| %>
-                  <%= n.nutrient_name %>
-                <% end %>
-                <br>
-                <br>
-                  <%= r.content.truncate(100) %>
+                <h2 class="recipe-title"><%= r.title %></h2>
+                <p>登録タグ</p>
+                <div class="recipe-tags">
+                        <% r.tags.each do |t| %>
+                        <span class="recipe-tag"><%= t.tag_name %></span>
+                      <% end %>
+                </div>
+                <p>栄養</p>
+                <div class="recipe-nutrients">
+                  <% r.nutrients.each do |n| %>
+                    <span class="recipe-nutrient"><%= n.nutrient_name %></span>
+                  <% end %>
+                </div>
+                  <div class="recipe-content"><%= r.content.truncate(100) %></div>
               </div>
               <%= image_tag r.images[0], class: "recipe-image-content" if r.images.attached? %>
             </div>

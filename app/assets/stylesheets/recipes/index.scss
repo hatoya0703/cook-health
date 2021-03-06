@@ -7,6 +7,30 @@
         .recipe-text-contents{
           box-sizing: border-box;
           width: 30vw;
+          h2{
+            margin-bottom: 1rem;
+          }
+          p{
+            padding-left: 1rem;
+            margin: 1rem 0 0.3rem 0;
+          }
+          .recipe-title{
+              
+          }
+          .recipe-tags{
+            padding-left: 2rem;
+          }
+          .recipe-nutrients{
+            padding-left: 2rem;
+          }
+          .recipe-content{
+            margin-top: 1rem;
+          }
+        }
+        .recipe-text-contents span{
+          background-color: lightgray;
+          border-radius: 3px;
+          padding: 0.1rem 0.3rem;
         }
         .recipe-image-content{
           box-sizing: border-box;
