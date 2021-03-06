@@ -11,22 +11,20 @@
       <ul class="tab-lists">
         <li class="my-recipes"><a href="#">マイレシピ</a></li>
         <li class="favorite-recipes">
-          <a href="#">お気に入りレシピ
-            <% if @favorite_recipes.present? %>
-              <% @favorite_recipes.each do |recipe| %>
-                <%= recipe.title %>
-                <%= recipe.content %>
-              <% end %>
-            <% end %>
-          </a>
+          <a href="#">お気に入りレシピ</a>
         </li>
       </ul>
-      <ul class="tab-contents">
+      <ul class="tab-contents"> 
         <li class="my-recipes">
-          テスト１
+          自分のレシピを表示
         </li>
         <li class="favorite-recipes">
-          テスト２
+          お気に入りレシピを表示
+          <%= render "favorite_recipe", favorite_recipes: @favorite_recipes %>
+          <% @favorite_recipes.each do |recipe| %>
+            <%= recipe.title %>
+            <%= recipe.content %>
+          <% end %>
         </li>
       </ul>
     </div>
