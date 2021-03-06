@@ -18,4 +18,12 @@ class User < ApplicationRecord
     end
     validates :password, length: { minimum: 6, maximum: 20 }, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i}
   end
+
+# ゲストログイン用クラスメソッド
+  def self.guest
+    find_or_create_by!(email:"guest@gmail.com") do |user|
+      user.nickname = "ゲスト"
+      user.password = SecureRandom.alphanumeric(10)
+    end
+  end
 end
