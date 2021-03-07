@@ -11,7 +11,7 @@ $(document).on("turbolinks:load",function(){
       e.preventDefault();
       // 呼び出し元(#comment-form)のフォームの入力データを取得
       const formData = new FormData($(this).get(0));
-      // 呼び出し元(#comment-form)のactionの値(/comments)を取得え
+      // 呼び出し元(#comment-form)のactionの値(/comments)を取得
       const url = $(this).attr("action");
       $.ajax({
         // コメントフォームの値を、/commentsにJSON形式でPOSTする。
