@@ -4,7 +4,6 @@
     <span class="star-icon1">☆<%= recipe.favorites.count %></span>
     <%= link_to recipe_favorites_path(recipe.id), method: :post, remote: true, class: "favorite-btn" do %>
       <% if current_user.id != recipe.user_id %>
-        <% binding.pry %>
         お気に入り登録する
       <% end %>
     <% end %>
