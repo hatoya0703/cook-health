@@ -3,7 +3,10 @@
   <% if !Favorite.exists?(user_id: current_user.id, recipe_id: recipe.id) %>
     <span class="star-icon1">☆<%= recipe.favorites.count %></span>
     <%= link_to recipe_favorites_path(recipe.id), method: :post, remote: true, class: "favorite-btn" do %>
-      お気に入り登録する
+      <% if current_user.id != recipe.user_id %>
+        <% binding.pry %>
+        お気に入り登録する
+      <% end %>
     <% end %>
   <% else %>
     <%= link_to recipe_favorite_path(recipe_id: recipe.id, id: recipe.favorites[0].id), method: :delete, remote: true, class:"favorite-btn" do %>
