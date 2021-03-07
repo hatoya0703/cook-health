@@ -1,3 +1,38 @@
-.tab-content > li{
-  display: none;
-} 
+.user-contents{
+  .user-name{
+    h1{
+      text-shadow: 3px 3px 1px silver
+    }
+    margin-bottom: 3rem;
+  }
+}
+.user-recipe-contents{
+  .tab-lists{
+    height: 6vh;
+    display: flex;
+    li{
+      
+      box-sizing: border-box;
+      width: 15vw;
+      border: 5px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a{
+        color: gray;
+        font-size: 1rem;
+      }
+    }
+    .on{
+      color: black;
+      border: 5px solid blueviolet;
+      background-color: yellow;
+      a{
+        color: black;
+          text-decoration: underline;
+          font-size: 1.2rem;
+      }
+    }
+  }
+
+}
