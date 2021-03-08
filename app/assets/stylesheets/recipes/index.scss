@@ -17,19 +17,22 @@
               
           }
           .recipe-tags{
-            padding-left: 2rem;
+            padding: 0 1rem 0 2rem;
           }
           .recipe-nutrients{
-            padding-left: 2rem;
+            padding: 0 1rem 0 2rem;
           }
           .recipe-content{
             margin-top: 1rem;
+            padding: 0 1rem 0 1rem;
           }
         }
         .recipe-text-contents span{
           background-color: lightgray;
           border-radius: 3px;
           padding: 0.1rem 0.3rem;
+          margin-bottom: 1rem;
+          line-height: 2rem;
         }
         .recipe-image-content{
           box-sizing: border-box;
