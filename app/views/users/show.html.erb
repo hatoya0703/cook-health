@@ -12,12 +12,11 @@
       <ul class="tab-contents"> 
         <li class="my-recipes">
               <div class="posted-recipe-count">
-                投稿レシピ数：<%= @my_recipe_count %>
+                投稿レシピ数：<%= @my_recipe_count %>件
               </div>
           <%= render "my_recipe", my_recipes: @my_recipes %>
         </li>
         <li class="favorite-recipes">
-          お気に入りレシピを表示
           <%= render "favorite_recipe", favorite_recipes: @favorite_recipes %>
         </li>
       </ul>

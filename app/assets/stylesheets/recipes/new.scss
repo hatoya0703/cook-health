@@ -15,8 +15,9 @@
       display: flex;
       div{
         img{
-          height: 15rem;
-          width: 15rem;
+          max-height: 15rem;
+          width: auto;
+          border-radius: 0.5rem;
         }
       }
     }
