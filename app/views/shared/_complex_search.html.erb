@@ -8,25 +8,35 @@
       <%= f.collection_select :category_id_eq, Category.all, :id, :name, include_blank: "指定なし" %>
       <%= f.label :nutrients_id_eq, "栄養", class: "search-items" %>
       <p class="nutrients-items">炭水化物</p>
-      <%= f.collection_check_boxes :nutrients_id_eq_any, Nutrient.where(nutrient_category_id: 1 ), :id, :nutrient_name do |n| %>
-        <% n.label { n.check_box + n.text } %>
-      <% end %>
+      <div class="nutrients-check-boxes">
+          <%= f.collection_check_boxes :nutrients_id_eq_any, Nutrient.where(nutrient_category_id: 1 ), :id, :nutrient_name do |n| %>
+            <% n.label { n.check_box + n.text } %>
+          <% end %>
+      </div>
       <p class="nutrients-items">脂質</p>
-      <%= f.collection_check_boxes :nutrients_id_eq_any, Nutrient.where(nutrient_category_id: 2 ), :id, :nutrient_name do |n| %>
-        <% n.label { n.check_box + n.text } %>
-      <% end %>
+      <div class="nutrients-check-boxes">
+        <%= f.collection_check_boxes :nutrients_id_eq_any, Nutrient.where(nutrient_category_id: 2 ), :id, :nutrient_name do |n| %>
+          <% n.label { n.check_box + n.text } %>
+        <% end %>
+      </div>
       <p class="nutrients-items">タンパク質</p>
-      <%= f.collection_check_boxes :nutrients_id_eq_any, Nutrient.where(nutrient_category_id: 3 ), :id, :nutrient_name do |n| %>
-        <% n.label { n.check_box + n.text } %>
-      <% end %>
+      <div class="nutrients-check-boxes">
+        <%= f.collection_check_boxes :nutrients_id_eq_any, Nutrient.where(nutrient_category_id: 3 ), :id, :nutrient_name do |n| %>
+          <% n.label { n.check_box + n.text } %>
+        <% end %>
+      </div>
       <p class="nutrients-items">ミネラル</p>
-      <%= f.collection_check_boxes :nutrients_id_eq_any, Nutrient.where(nutrient_category_id: 4 ), :id, :nutrient_name do |n| %>
-        <% n.label { n.check_box + n.text } %>
-      <% end %>
+      <div class="nutrients-check-boxes">
+        <%= f.collection_check_boxes :nutrients_id_eq_any, Nutrient.where(nutrient_category_id: 4 ), :id, :nutrient_name do |n| %>
+          <% n.label { n.check_box + n.text } %>
+        <% end %>
+      </div>
       <p class="nutrients-items">ビタミン</p>
-      <%= f.collection_check_boxes :nutrients_id_eq_any, Nutrient.where(nutrient_category_id: 5 ), :id, :nutrient_name do |n| %>
-        <% n.label { n.check_box + n.text } %>
-      <% end %>
+      <div class="nutrients-check-boxes">
+        <%= f.collection_check_boxes :nutrients_id_eq_any, Nutrient.where(nutrient_category_id: 5 ), :id, :nutrient_name do |n| %>
+          <% n.label { n.check_box + n.text } %>
+        <% end %>
+      </div>
       <%= f.label :category_id_eq, "表示順", class:"search-items" %>
       <%= f.select( :sorts, {"並び替え": "id desc", "投稿が新しい順": "id desc", "投稿が古い順": "id asc"} ) %>
       <%= f.submit ("検索する") %>
